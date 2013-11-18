@@ -1,0 +1,6 @@
+Pre-Emphasis Filter
+.SUBCKT preemp in out
+Xhp	in	1	php
+Xlp	1	2	plp
+Xg	2	out	pgain
+.ENDS preemp

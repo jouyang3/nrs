@@ -1,0 +1,8 @@
+Preemphasis High Pass
+.SUBCKT php in out
+C1	in	1	1
+R1	1	out	0.707
+C2	1	p	1
+R2	p	0	1.414
+X1	p	out	out	popamp
+.ENDS php

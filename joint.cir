@@ -1,0 +1,3 @@
+.SUBCKT joint in out
+X1	in	out	out	popamp
+.ENDS joint

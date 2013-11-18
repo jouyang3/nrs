@@ -1,0 +1,7 @@
+Driver Test Netlist
+Vin	0	1	AC	1
+Xpe	1	2	preemp
+.AC DEC 40 100 10K
+.PRINT VDB(2), VP(2)
+.OPTIONS POST
+.END

@@ -1,0 +1,9 @@
+Pseudo Op-Amp
+.SUBCKT popamp 	4 	n 	2
+Ri	4	n	2MEG
+Ei	1	0	4	n	1
+R	1	3	1
+C	3	0	0.03183
+Eo	6	0	3	0	200K
+Ro	6	2	75
+.ENDS popamp
