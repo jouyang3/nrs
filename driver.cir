@@ -1,7 +1,16 @@
 Driver Test Netlist
+.INCLUDE popamp.cir
+.INCLUDE php.cir
+.INCLUDE plp.cir
+.INCLUDE pgain.cir
+.INCLUDE preemp.cir
 Vin	0	1	AC	1
 Xpe	1	2	preemp
-.AC DEC 40 100 10K
+.AC DEC 40 100 10k
 .PRINT VDB(2), VP(2)
-.OPTIONS POST
+.OPTIONS gmin=1e-10
+.OPTIONS method=gear
+.options Tseed=1e-11
+.options abstol=1e-11
+.options post
 .END

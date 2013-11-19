@@ -1,6 +1,6 @@
-Preemphasis Gain
 .SUBCKT	pgain in out
-Rf	n	out	15.8
-Ri	in	n	1
+* K=27.67dB
+Rf	n	out	24.2k
+Ri	in	n	1k
 X1	0	n	out	popamp
 .ENDS pgain

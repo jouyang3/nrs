@@ -1,8 +1,7 @@
-Preemphasis High Pass
 .SUBCKT php in out
-C1	in	1	1
-R1	1	out	0.707
-C2	1	p	1
-R2	p	0	1.414
+C1	in	1	2n
+R1	1	out	112523
+C2	1	p	2n
+R2	p	0	225045
 X1	p	out	out	popamp
 .ENDS php
