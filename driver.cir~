@@ -9,6 +9,5 @@ Vin	0	1	AC	1
 Xpe	1	2	preemp
 .AC DEC 40 100 10k
 .PRINT VDB(2), VP(2)
-.options list
 .options post
 .END

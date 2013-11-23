@@ -1,6 +1,6 @@
-.SUBCKT	pgain in out
+.SUBCKT	gain in out a=1
 * K=27.67dB
-Rf	n	out	24.2k
+Rf	n	out	R=(a*1k)
 Ri	in	n	1k
 X1	0	n	out	popamp
 .ENDS pgain

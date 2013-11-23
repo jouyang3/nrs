@@ -1,7 +1,0 @@
-.SUBCKT plp in out
-R1	in	1	120k
-R2	1	p	120k
-C1	1	out	0.938n
-C2	p	0	469p
-X1	p	out	out	popamp
-.ENDS plp
