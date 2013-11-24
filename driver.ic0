@@ -1,0 +1,53 @@
+* "simulator" "HSPICE" 
+* "version" "H-2013.03 64-BIT"
+* "format" "HSP"
+* "rundate" "21:30:56 11/24/2013 "
+* "netlist" "driver.cir "
+* "runtitle" "driver test netlist"
+* time =    0.            
+* temperature =   25.0000        
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc=   1.0000p       
+.nodeset
++ 1 =   0.            
++ 2 =   0.            
++ 3 =   0.            
++ xpe.1 =   0.            
++ xpe.2 =   0.            
++ xde.1 =   0.            
++ xde.2 =   0.            
++ xde.3 =   0.            
++ xpe.xhp.1 =   0.            
++ xpe.xhp.p =   0.            
++ xpe.xlp.1 =   0.            
++ xpe.xlp.p =   0.            
++ xpe.xg.n =   0.            
++ xde.xlp.1 =   0.            
++ xde.xlp.p =   0.            
++ xde.xhp.1 =   0.            
++ xde.xhp.p =   0.            
++ xde.xsum.n =   0.            
++ xde.xg.n =   0.            
++ xpe.xhp.x1.1 =   0.            
++ xpe.xhp.x1.3 =   0.            
++ xpe.xhp.x1.6 =   0.            
++ xpe.xlp.x1.1 =   0.            
++ xpe.xlp.x1.3 =   0.            
++ xpe.xlp.x1.6 =   0.            
++ xpe.xg.x1.1 =   0.            
++ xpe.xg.x1.3 =   0.            
++ xpe.xg.x1.6 =   0.            
++ xde.xlp.x1.1 =   0.            
++ xde.xlp.x1.3 =   0.            
++ xde.xlp.x1.6 =   0.            
++ xde.xhp.x1.1 =   0.            
++ xde.xhp.x1.3 =   0.            
++ xde.xhp.x1.6 =   0.            
++ xde.xsum.x1.1 =   0.            
++ xde.xsum.x1.3 =   0.            
++ xde.xsum.x1.6 =   0.            
++ xde.xg.x1.1 =   0.            
++ xde.xg.x1.3 =   0.            
++ xde.xg.x1.6 =   0.            
+***   END: Saved Operating Point ***                     

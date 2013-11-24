@@ -1,5 +1,5 @@
 .SUBCKT preemp in out
-.PARAM khf='2*500*Pi'
+.PARAM khf='2*530*Pi'
 .PARAM klf='w0^2/khf'
 Xhp	in	1	hp	kf=khf	c=2n
 Xlp	1	2	lp	kf=klf	r=120k

@@ -1,5 +1,5 @@
 .SUBCKT deemp in out
-.PARAM klf='2*100*Pi'
+.PARAM klf='2*97*Pi'
 .PARAM khf='w0^2/klf'
 Xlp	in	1	lp	kf=klf	r=120k
 Xhp	in	2	hp	kf=khf	c=2n
