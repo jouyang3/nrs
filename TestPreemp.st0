@@ -3,7 +3,7 @@
  lic:
  lic: FLEXlm: v10.9.8
  lic: USER:   Jun                  HOSTNAME: Jun-PC
- lic: HOSTID: "28cfe91bd273 005056c00001 005056c00008" PID:      2024
+ lic: HOSTID: "28cfe91bd273 005056c00001 005056c00008" PID:      1696
  lic: Using FLEXlm license file:
  lic: 27000@Jun-PC
  lic: Checkout 1 hspice
@@ -31,14 +31,14 @@
        option runlvl
        option list
        option post
- init: end read circuit files,  cpu clock=  4.49E+00 peak memory=        63 mb
+ init: end read circuit files,  cpu clock=  4.49E+00 peak memory=        62 mb
  init: begin check errors,  cpu clock=  4.49E+00
- init: end check errors,  cpu clock=  4.49E+00 peak memory=        63 mb
- init: begin setup matrix, pivot=     0 cpu clock=  4.49E+00
-       establish matrix -- done,  cpu clock=  4.49E+00 peak memory=        63 mb
-       re-order matrix -- done,  cpu clock=  4.49E+00 peak memory=        63 mb
- init: end setup matrix,  cpu clock=  4.49E+00 peak memory=        63 mb
- dcop: begin dcop,  cpu clock=  4.49E+00
+ init: end check errors,  cpu clock=  4.50E+00 peak memory=        63 mb
+ init: begin setup matrix, pivot=     0 cpu clock=  4.50E+00
+       establish matrix -- done,  cpu clock=  4.50E+00 peak memory=        63 mb
+       re-order matrix -- done,  cpu clock=  4.50E+00 peak memory=        63 mb
+ init: end setup matrix,  cpu clock=  4.50E+00 peak memory=        63 mb
+ dcop: begin dcop,  cpu clock=  4.50E+00
  dcop: end dcop,  cpu clock=  4.50E+00 peak memory=        63 mb  tot_iter=       3
  output: TestPreemp.ac0
  sweep: ac ac0    begin, #sweeps=  81 cpu clock=  4.50E+00

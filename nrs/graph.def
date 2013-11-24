@@ -1,4 +1,4 @@
-proc Graph:LoadGraph4 {filename {graph {}}} {
+proc Graph:LoadGraph2 {filename {graph {}}} {
 
     global tk_status
     global GrXY Graph sigs
@@ -12,7 +12,7 @@ proc Graph:LoadGraph4 {filename {graph {}}} {
     if {$graph=={}} {
         # Load needed plotfiles if absent
 
-        set pfwf [Graph:GetSigs3 $graphpath {{{{../TestPreemp.ac0 vdb(2)}} {} {} 0} {{{../TestDeemp.ac0 vdb(2)}} {} {} 0} {{{../driver.ac0 vdb(3)}} {} {} 0}}]
+        set pfwf [Graph:GetSigs3 $graphpath {{{{../TestPreemp.ac0 vdb(2)}} {} {} 0} {{{../TestDeemp.ac0 vdb(2)}} {} {} 0} {{{../nrs.ac0 vdb(3)}} {} {} 0}}]
 
         set pf [lindex $pfwf 0 ]
 
@@ -23,11 +23,11 @@ proc Graph:LoadGraph4 {filename {graph {}}} {
         set sigs(wfIdx,load) [lindex $pfwf 3 ]
 
         # Create the new graph
-        set graph [GrXY:NewGraphConfig  {-type xy -font {-family {OF Helvetica} -size 10} -fg {white} -bg {black} -actfg {red} 	        -graphbg {black} -legend right -legendaxisdisplay 1 -grid no 		-sighi legend -maxforfb 10000 		-minwidth 2 -minheight 2 -gridtype - -gridlinestyle {-  } 		-gridlinewidth 1 -gridlinecolor white -subgridlinestyle {-  }                 -subgridlinewidth 1 -subgridlinecolor white -griddashlength 1                 -siglinewidth 1 -rainbow 0 -ptreduct 10000 -sigcolors {green magenta cyan yellow #FF8000 #89ffbb #edbfff #0080FF #ffd016 #ff74bd} -prezoom {0.000000e+000 0.000000e+000 1.000000e+000 0.000000e+000} -signames {leaf} -anatracehi 2 -digitracehi 1 -digisnap 0 -busdisp hex} {1908} {968}]
+        set graph [GrXY:NewGraphConfig  {-type xy -font {-family {OF Helvetica} -size 10} -fg {white} -bg {black} -actfg {red} 	        -graphbg {black} -legend right -legendaxisdisplay 1 -grid no 		-sighi legend -maxforfb 10000 		-minwidth 2 -minheight 2 -gridtype - -gridlinestyle {-  } 		-gridlinewidth 1 -gridlinecolor white -subgridlinestyle {-  }                 -subgridlinewidth 1 -subgridlinecolor white -griddashlength 1                 -siglinewidth 1 -rainbow 0 -ptreduct 10000 -sigcolors {green magenta cyan yellow #FF8000 #89ffbb #edbfff #0080FF #ffd016 #ff74bd} -prezoom {0.000000e+000 0.000000e+000 1.000000e+000 0.000000e+000} -signames {leaf} -anatracehi 2 -digitracehi 1 -digisnap 0 -busdisp hex} {1906} {964}]
     } else {
         # Load needed plotfiles if absent
 
-        set pfwf [Graph:GetSigs3 $graphpath {{{{../TestPreemp.ac0 vdb(2)}} {} {} 0} {{{../TestDeemp.ac0 vdb(2)}} {} {} 0} {{{../driver.ac0 vdb(3)}} {} {} 0}} 0]
+        set pfwf [Graph:GetSigs3 $graphpath {{{{../TestPreemp.ac0 vdb(2)}} {} {} 0} {{{../TestDeemp.ac0 vdb(2)}} {} {} 0} {{{../nrs.ac0 vdb(3)}} {} {} 0}} 0]
 
         set pf [lindex $pfwf 0 ]
 
@@ -50,7 +50,7 @@ proc Graph:LoadGraph4 {filename {graph {}}} {
     set Graph($graph,cmap) 1
 
     # Configure Graph Title
-    $graph itemconfig GraphTitle -text {Graph4}
+    $graph itemconfig GraphTitle -text {Noise Reduction System}
 
     # Restore Mem Label variables
     # Add the signals to the graph with appropriate attributes
@@ -81,25 +81,9 @@ proc Graph:LoadGraph4 {filename {graph {}}} {
     set ax(2,xaxis,saved) AxisX(0)
     set ax(2,yaxis,saved) AxisY(0,0)
     set ax(AxisY(0,0),configs,saved) {-scale {linear} -gridvis {no} -linticks {} -logticks {} -subticks {0} -label {(dBV)} -digiview {} -lock {no} -slider {no} -range {-2.7567937374115 2.7289242744446} -unitscale {auto}}
-    set ax(AxisX(0),configs,saved) {-scale {log} -gridvis {no} -linticks {} -logticks {1 1} -subticks {8} -label {f(Hz)} -digiview {} -lock {no} -slider {no} -range {100.0 10000.0} -unitscale {auto}}
     set ax(AxisY(1,0),configs,saved) {-scale {linear} -gridvis {no} -linticks {} -logticks {} -subticks {0} -label {(dBV)} -digiview {} -lock {no} -slider {no} -range {-31.091382980347 0.21805027127266} -unitscale {auto}}
     set ax(AxisY(2,0),configs,saved) {-scale {linear} -gridvis {no} -linticks {} -logticks {} -subticks {0} -label {(dBV)} -digiview {} -lock {no} -slider {no} -range {-0.36803233623505 28.33434677124} -unitscale {auto}}
-    set ax(AxisY(0,0),configs,saved) {-scale {linear} -gridvis {no} -linticks {} -logticks {} -subticks {0} -label {(dBV)} -digiview {} -lock {no} -slider {no} -range {-2.7567937374115 2.7289242744446} -unitscale {auto}}
     set ax(AxisX(0),configs,saved) {-scale {log} -gridvis {no} -linticks {} -logticks {1 1} -subticks {8} -label {f(Hz)} -digiview {} -lock {no} -slider {no} -range {100.0 10000.0} -unitscale {auto}}
-    set ax(AxisY(1,0),configs,saved) {-scale {linear} -gridvis {no} -linticks {} -logticks {} -subticks {0} -label {(dBV)} -digiview {} -lock {no} -slider {no} -range {-31.091382980347 0.21805027127266} -unitscale {auto}}
-    set ax(AxisY(2,0),configs,saved) {-scale {linear} -gridvis {no} -linticks {} -logticks {} -subticks {0} -label {(dBV)} -digiview {} -lock {no} -slider {no} -range {-0.36803233623505 28.33434677124} -unitscale {auto}}
-    set ax(AxisY(0,0),configs,saved) {-scale {linear} -gridvis {no} -linticks {} -logticks {} -subticks {0} -label {(dBV)} -digiview {} -lock {no} -slider {no} -range {-2.7567937374115 2.7289242744446} -unitscale {auto}}
-    set ax(AxisX(0),configs,saved) {-scale {log} -gridvis {no} -linticks {} -logticks {1 1} -subticks {8} -label {f(Hz)} -digiview {} -lock {no} -slider {no} -range {100.0 10000.0} -unitscale {auto}}
-    set ax(AxisY(1,0),configs,saved) {-scale {linear} -gridvis {no} -linticks {} -logticks {} -subticks {0} -label {(dBV)} -digiview {} -lock {no} -slider {no} -range {-31.091382980347 0.21805027127266} -unitscale {auto}}
-    set ax(AxisY(2,0),configs,saved) {-scale {linear} -gridvis {no} -linticks {} -logticks {} -subticks {0} -label {(dBV)} -digiview {} -lock {no} -slider {no} -range {-0.36803233623505 28.33434677124} -unitscale {auto}}
-    set ax(AxisY(0,0),configs,saved) {-scale {linear} -gridvis {no} -linticks {} -logticks {} -subticks {0} -label {(dBV)} -digiview {} -lock {no} -slider {no} -range {-2.7567937374115 2.7289242744446} -unitscale {auto}}
-    set ax(AxisX(0),configs,saved) {-scale {log} -gridvis {no} -linticks {} -logticks {1 1} -subticks {8} -label {f(Hz)} -digiview {} -lock {no} -slider {no} -range {100.0 10000.0} -unitscale {auto}}
-    set ax(AxisY(1,0),configs,saved) {-scale {linear} -gridvis {no} -linticks {} -logticks {} -subticks {0} -label {(dBV)} -digiview {} -lock {no} -slider {no} -range {-31.091382980347 0.21805027127266} -unitscale {auto}}
-    set ax(AxisY(2,0),configs,saved) {-scale {linear} -gridvis {no} -linticks {} -logticks {} -subticks {0} -label {(dBV)} -digiview {} -lock {no} -slider {no} -range {-0.36803233623505 28.33434677124} -unitscale {auto}}
-    set ax(AxisY(0,0),configs,saved) {-scale {linear} -gridvis {no} -linticks {} -logticks {} -subticks {0} -label {(dBV)} -digiview {} -lock {no} -slider {no} -range {-2.7567937374115 2.7289242744446} -unitscale {auto}}
-    set ax(AxisX(0),configs,saved) {-scale {log} -gridvis {no} -linticks {} -logticks {1 1} -subticks {8} -label {f(Hz)} -digiview {} -lock {no} -slider {no} -range {100.0 10000.0} -unitscale {auto}}
-    set ax(AxisY(1,0),configs,saved) {-scale {linear} -gridvis {no} -linticks {} -logticks {} -subticks {0} -label {(dBV)} -digiview {} -lock {no} -slider {no} -range {-31.091382980347 0.21805027127266} -unitscale {auto}}
-    set ax(AxisY(2,0),configs,saved) {-scale {linear} -gridvis {no} -linticks {} -logticks {} -subticks {0} -label {(dBV)} -digiview {} -lock {no} -slider {no} -range {-0.36803233623505 28.33434677124} -unitscale {auto}}
 
     set ax(list) ""
     set items [$canvas find all]
@@ -348,8 +332,8 @@ if {! $fail} {
 }
 
 # Call the new procedure
-if [catch {AimBusy "Graph:LoadGraph4 $Graph(filename) $graph" . watch} msg] {
+if [catch {AimBusy "Graph:LoadGraph2 $Graph(filename) $graph" . watch} msg] {
     AimMessage $msg error "Cant Read Graph" modal
 }
 # Delete the new procedure
-rename Graph:LoadGraph4 {}
+rename Graph:LoadGraph2 {}

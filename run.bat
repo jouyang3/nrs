@@ -1,5 +1,5 @@
 @echo off
 
-hspice driver.cir > driver.log
+hspice nrs.cir > nrs.log
 hspice TestPreemp.cir > TestPreemp.log
 hspice TestDeemp.cir > TestDeemp.log

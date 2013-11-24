@@ -1,9 +1,9 @@
 * "simulator" "HSPICE" 
 * "version" "H-2013.03 64-BIT"
 * "format" "HSP"
-* "rundate" "21:30:56 11/24/2013 "
-* "netlist" "driver.cir "
-* "runtitle" "driver test netlist"
+* "rundate" "21:59:40 11/24/2013 "
+* "netlist" "nrs.cir "
+* "runtitle" "noise reduction system - main"
 * time =    0.            
 * temperature =   25.0000        
 *** BEGIN: Saved Operating Point ***                     
