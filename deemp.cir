@@ -1,0 +1,8 @@
+.SUBCKT deemp in out
+.PARAM klf='2*100*Pi'
+.PARAM khf='w0^2/klf'
+Xlp	in	1	lp	kf=klf	r=120k
+Xhp	in	2	hp	kf=khf	c=2n
+Xsum	1	2	3	sum
+Xg	3	out	gain	a='10^(3.5/20)'
+.ENDS deemp

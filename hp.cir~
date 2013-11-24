@@ -1,9 +1,0 @@
-.SUBCKT hp in out kf=1 c=1
-.PARAM km='1/kf/c'
-C1	in	1	C=c
-R1	1	out	R='km*0.707'
-C2	1	p	C=c
-R2	p	0	R='km*1.414'
-X1	p	out	out	popamp
-.PRINT R1
-.ENDS hp

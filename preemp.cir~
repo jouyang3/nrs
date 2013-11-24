@@ -1,5 +1,0 @@
-.SUBCKT preemp in out
-Xhp	in	1	hp	kf='1073*Pi'	c=5n
-Xlp	1	2	lp	kf='3730*Pi'	r=120k
-Xg	2	out	gain	a='10^(29/20)'
-.ENDS preemp

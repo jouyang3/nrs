@@ -1,1 +1,6 @@
-.SUBCKT sum 
+.SUBCKT sum in1 in2 out
+R1	in1	n	10k
+R2	in2	n	10k
+Rf	n	out	10k
+X1	0	n	out	popamp
+.ENDS sum 

@@ -1,9 +1,0 @@
-.INCLUDE popamp.cir
-.SUBCKT lp in out kf=1 r=1
-.PARAM km=r
-R1	in	1	R=r
-R2	1	p	R=r
-C1	1	out	C='1.414/km/kf'
-C2	p	0	C='0.707/km/kf'
-X1	p	out	out	popamp
-.ENDS lp

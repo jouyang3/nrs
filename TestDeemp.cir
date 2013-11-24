@@ -1,13 +1,15 @@
-Driver Test Netlist
+Deemp Test Netlist
 .INCLUDE constants.cir
 .INCLUDE popamp.cir
 .INCLUDE hp.cir
 .INCLUDE lp.cir
 .INCLUDE gain.cir
-.INCLUDE preemp.cir
+.INCLUDE sum.cir
+.INCLUDE deemp.cir
 Vin	0	1	AC	1
-Xpe	1	2	preemp
+Xde	1	2	deemp
 .AC DEC 40 100 10k
-.PRINT VDB(2), VP(2)
+.PRINT VDB(2)
+.options list
 .options post
 .END
