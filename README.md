@@ -4,11 +4,11 @@ nrs - Noise Reduction System
 #How to run:  
 **Make sure you have installed hspice and set the PATH.**
 
-**Windows# - execute run.bat**  
-**#Linux# - execute run.sh**
+**Windows - execute run.bat**  
+**#Linux - execute run.sh**
 
-#Files#:  
-##Netlists#:  
+#Files:  
+##Netlists:  
 **constants.cir**: application critical constants (center frequency, PI etc).  
 **deemp.cir**: De-Emphasis subcircuit.  
 **gain.cir**: Inverting Op-Amp subcircuit.  
@@ -22,34 +22,34 @@ nrs - Noise Reduction System
 **TestDeemp.cir**: Tests De-Emphasis.  
 **TestPreemp.cir**: Tests Pre-Emphasis.  
 
-##Logs##:  
+##Logs:  
 **nrs.log**: hspice output from nrs.cir.  
 **TestDeemp.log**: hspice output from TestDeemp.cir.  
 **TestPreemp.log**: hspice output from TestPreemp.cir.  
 
-##Excel##:  
+##Excel:  
 **parts.xlsx**: used for price/parts analysis.  
 
-##Executables##:  
+##Executables:  
 **run.bat**: used for running nrs.cir, TestDeemp.cir, TestPreemp.cir on Windows.  
 **run.sh**: used for running nrs.cir, TestDeemp.cir, TestPreemp.cir on Linux.  
 
-##LICENSE files##:  
+##LICENSE files:  
 **LICENSE**: GNU v2.  
 
-##Cosmos Graph##:  
+##Cosmos Graph:  
 **nrs.ai\_graph**: used for analyzing response. Requires CosmosScope.  
 
-##Directories##:  
+##Directories:  
 **nrs**: extra information for CosmosScope to open nrs.ai\_graph.  
 **.git**: Git magic directory.
 
-##GitHub##:  
+##GitHub:  
 **.gitignore**: ignored extensions.  
 **\_gitignore**: same as above.  
 
-##\*.ac0, \*.ic0, \*.st0, \*.pa0##:  
+##\*.ac0, \*.ic0, \*.st0, \*.pa0:  
 **hspice analysis save files.**  
 
-##.DS\_Store#:  
+##.DS\_Store:  
 **github datastore.**  
