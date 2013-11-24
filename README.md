@@ -5,7 +5,7 @@ nrs - Noise Reduction System
 **Make sure you have installed hspice and set the PATH.**
 
 **Windows - execute run.bat**  
-**#Linux - execute run.sh**
+**Linux - execute run.sh**
 
 #Files:  
 ##Netlists:  
