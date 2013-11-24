@@ -54,7 +54,7 @@ proc Graph:LoadGraph2 {filename {graph {}}} {
 
     # Restore Mem Label variables
     # Add the signals to the graph with appropriate attributes
-    set configs {-region {2 1 0} -yview {real(y) real(y) real(y)} -xview {real(x) real(x) real(x)} -rainbow {0 0 0} -rbcolors {{} {} {}} -fill {cyan magenta green} -linestyle {- - -} -width {1 1 1} -symbol {{} {} {}} -symwidth {10 10 10} -bar {{} {} {}} -barwidth {0 0 0} -baseline {0.0 0.0 0.0} -stipple {{} {} {}} -label {vdb(2) vdb(2) vdb(3)} -xaxis {0 0 0} -yaxis {0 0 0} -tracehi {2 2 2} -bus {{} {} {}} -segdisp {y y y} -monotonicdisp {0 0 0} -index {29 28 27}}
+    set configs {-region {2 1 0} -yview {real(y) real(y) real(y)} -xview {real(x) real(x) real(x)} -rainbow {0 0 0} -rbcolors {{} {} {}} -fill {cyan magenta green} -linestyle {- - -} -width {1 1 1} -symbol {{} {} {}} -symwidth {10 10 10} -bar {{} {} {}} -barwidth {0 0 0} -baseline {0.0 0.0 0.0} -stipple {{} {} {}} -label {vdb(2) vdb(2) vdb(3)} -xaxis {0 0 0} -yaxis {0 0 0} -tracehi {2 2 2} -bus {{} {} {}} -segdisp {y y y} -monotonicdisp {0 0 0} -index {2 1 0}}
 
     if {$missingWfIdx != ""} {
         set configs [Graph:ResetSigConfigs1 $configs $missingWfIdx]
@@ -120,41 +120,87 @@ proc Graph:LoadGraph2 {filename {graph {}}} {
 
 
     # Restore Measurements
-    set sigs(Signal29,idx,saved) 0
-    set sigs(Signal28,idx,saved) 1
-    set sigs(Signal27,idx,saved) 2
+    set sigs(Signal2,idx,saved) 0
+    set sigs(Signal1,idx,saved) 1
+    set sigs(Signal0,idx,saved) 2
 global Meas_${graph}
     global Meas
     set Meas(tool,xrXStart) start
     set Meas(tool,xrXEnd) end
     set Meas(tool,xrYStart) start
     set Meas(tool,xrYEnd) end
-if {[lsearch $sigs(wfIdx,load) $sigs(Signal27,idx,saved)] != -1} {
-set measCmd [Graph:ReplaceMeasElements1 {GrMeas:AtX $graph Signal27 {200 --} xyrangeAll 0 - activeGraph {{5}  {-}  {1}  {20}  {No}  {No}  {50}  {10}  {auto}  {Parameter}} 1} {At X} $graph]
+if {[lsearch $sigs(wfIdx,load) $sigs(Signal2,idx,saved)] != -1} {
+set measCmd [Graph:ReplaceMeasElements1 {GrMeas:HighLow $graph Signal2  {Lowpass} default - 3 xyrangeAll  0 - activeGraph {{5}  {-}  {1}  {20}  {No}  {No}  {50}  {10}  {auto}  {Parameter}} 1} {Lowpass} $graph]
 if {$measCmd != ""} {
 set mindex [eval $measCmd]
 set fail [expr [isvalid integer $mindex] && {$mindex < 0}]
 if {! $fail} {
   global Meas_${graph}_${mindex}
-  set Meas_${graph}_${mindex}(0,lblx) 30
-  set Meas_${graph}_${mindex}(0,lbly) 30
+  set Meas_${graph}_${mindex}(1,lblx) 30
+  set Meas_${graph}_${mindex}(1,lbly) 30
 }
 }
 }
-if {[lsearch $sigs(wfIdx,load) $sigs(Signal27,idx,saved)] != -1} {
-set measCmd [Graph:ReplaceMeasElements1 {GrMeas:AtX $graph Signal27 {5000 --} xyrangeAll 0 - activeGraph {{5}  {-}  {1}  {20}  {No}  {No}  {50}  {10}  {auto}  {Parameter}} 1} {At X} $graph]
+if {[lsearch $sigs(wfIdx,load) $sigs(Signal1,idx,saved)] != -1} {
+set measCmd [Graph:ReplaceMeasElements1 {GrMeas:HighLow $graph Signal1  {Lowpass} default - 3 xyrangeAll  0 - activeGraph {{5}  {-}  {1}  {20}  {No}  {No}  {50}  {10}  {auto}  {Parameter}} 1} {Lowpass} $graph]
 if {$measCmd != ""} {
 set mindex [eval $measCmd]
 set fail [expr [isvalid integer $mindex] && {$mindex < 0}]
 if {! $fail} {
   global Meas_${graph}_${mindex}
-  set Meas_${graph}_${mindex}(0,lblx) 30
-  set Meas_${graph}_${mindex}(0,lbly) 30
+  set Meas_${graph}_${mindex}(1,lblx) 30
+  set Meas_${graph}_${mindex}(1,lbly) 30
 }
 }
 }
-if {[lsearch $sigs(wfIdx,load) $sigs(Signal27,idx,saved)] != -1} {
-set measCmd [Graph:ReplaceMeasElements1 {GrMeas:Levels $graph Signal27  {Minimum Maximum} xyrangeAll 0 -  activeGraph {{5}  {-}  {1}  {20}  {No}  {No}  {50}  {10}  {auto}  {Parameter}} 1} {Levels} $graph]
+if {[lsearch $sigs(wfIdx,load) $sigs(Signal2,idx,saved)] != -1} {
+set measCmd [Graph:ReplaceMeasElements1 {GrMeas:HighLow $graph Signal2  {Highpass} default - 3 xyrangeAll  0 - activeGraph {{5}  {-}  {1}  {20}  {No}  {No}  {50}  {10}  {auto}  {Parameter}} 1} {Highpass} $graph]
+if {$measCmd != ""} {
+set mindex [eval $measCmd]
+set fail [expr [isvalid integer $mindex] && {$mindex < 0}]
+if {! $fail} {
+  global Meas_${graph}_${mindex}
+  set Meas_${graph}_${mindex}(1,lblx) 30
+  set Meas_${graph}_${mindex}(1,lbly) 30
+}
+}
+}
+if {[lsearch $sigs(wfIdx,load) $sigs(Signal1,idx,saved)] != -1} {
+set measCmd [Graph:ReplaceMeasElements1 {GrMeas:HighLow $graph Signal1  {Highpass} default - 3 xyrangeAll  0 - activeGraph {{5}  {-}  {1}  {20}  {No}  {No}  {50}  {10}  {auto}  {Parameter}} 1} {Highpass} $graph]
+if {$measCmd != ""} {
+set mindex [eval $measCmd]
+set fail [expr [isvalid integer $mindex] && {$mindex < 0}]
+if {! $fail} {
+  global Meas_${graph}_${mindex}
+  set Meas_${graph}_${mindex}(1,lblx) 30
+  set Meas_${graph}_${mindex}(1,lbly) 30
+}
+}
+}
+if {[lsearch $sigs(wfIdx,load) $sigs(Signal2,idx,saved)] != -1} {
+set measCmd [Graph:ReplaceMeasElements1 {GrMeas:Levels $graph Signal2  {Maximum} xyrangeAll 0 -  activeGraph {{5}  {-}  {1}  {20}  {No}  {No}  {50}  {10}  {auto}  {Parameter}} 1} {Levels} $graph]
+if {$measCmd != ""} {
+set mindex [eval $measCmd]
+set fail [expr [isvalid integer $mindex] && {$mindex < 0}]
+if {! $fail} {
+  global Meas_${graph}_${mindex}
+  set Meas_${graph}_${mindex}(0,lblanchor)  se
+}
+}
+}
+if {[lsearch $sigs(wfIdx,load) $sigs(Signal1,idx,saved)] != -1} {
+set measCmd [Graph:ReplaceMeasElements1 {GrMeas:Levels $graph Signal1  {Minimum} xyrangeAll 0 -  activeGraph {{5}  {-}  {1}  {20}  {No}  {No}  {50}  {10}  {auto}  {Parameter}} 1} {Levels} $graph]
+if {$measCmd != ""} {
+set mindex [eval $measCmd]
+set fail [expr [isvalid integer $mindex] && {$mindex < 0}]
+if {! $fail} {
+  global Meas_${graph}_${mindex}
+  set Meas_${graph}_${mindex}(0,lblanchor)  ne
+}
+}
+}
+if {[lsearch $sigs(wfIdx,load) $sigs(Signal0,idx,saved)] != -1} {
+set measCmd [Graph:ReplaceMeasElements1 {GrMeas:Levels $graph Signal0  {Minimum Maximum} xyrangeAll 0 -  activeGraph {{5}  {-}  {1}  {20}  {No}  {No}  {50}  {10}  {auto}  {Parameter}} 1} {Levels} $graph]
 if {$measCmd != ""} {
 set mindex [eval $measCmd]
 set fail [expr [isvalid integer $mindex] && {$mindex < 0}]
@@ -165,8 +211,8 @@ if {! $fail} {
 }
 }
 }
-if {[lsearch $sigs(wfIdx,load) $sigs(Signal27,idx,saved)] != -1} {
-set measCmd [Graph:ReplaceMeasElements1 {GrMeas:AtX $graph Signal27 {100 --} xyrangeAll 0 - activeGraph {{5}  {-}  {1}  {20}  {No}  {No}  {50}  {10}  {auto}  {Parameter}} 1} {At X} $graph]
+if {[lsearch $sigs(wfIdx,load) $sigs(Signal2,idx,saved)] != -1} {
+set measCmd [Graph:ReplaceMeasElements1 {GrMeas:AtX $graph Signal2 {200 --} xyrangeAll 0 - activeGraph {{5}  {-}  {1}  {20}  {No}  {No}  {50}  {10}  {auto}  {Parameter}} 1} {At X} $graph]
 if {$measCmd != ""} {
 set mindex [eval $measCmd]
 set fail [expr [isvalid integer $mindex] && {$mindex < 0}]
@@ -177,8 +223,8 @@ if {! $fail} {
 }
 }
 }
-if {[lsearch $sigs(wfIdx,load) $sigs(Signal28,idx,saved)] != -1} {
-set measCmd [Graph:ReplaceMeasElements1 {GrMeas:AtX $graph Signal28 {200 --} xyrangeAll 0 - activeGraph {{5}  {-}  {1}  {20}  {No}  {No}  {50}  {10}  {auto}  {Parameter}} 1} {At X} $graph]
+if {[lsearch $sigs(wfIdx,load) $sigs(Signal1,idx,saved)] != -1} {
+set measCmd [Graph:ReplaceMeasElements1 {GrMeas:AtX $graph Signal1 {200 --} xyrangeAll 0 - activeGraph {{5}  {-}  {1}  {20}  {No}  {No}  {50}  {10}  {auto}  {Parameter}} 1} {At X} $graph]
 if {$measCmd != ""} {
 set mindex [eval $measCmd]
 set fail [expr [isvalid integer $mindex] && {$mindex < 0}]
@@ -189,8 +235,8 @@ if {! $fail} {
 }
 }
 }
-if {[lsearch $sigs(wfIdx,load) $sigs(Signal28,idx,saved)] != -1} {
-set measCmd [Graph:ReplaceMeasElements1 {GrMeas:AtX $graph Signal28 {5000 --} xyrangeAll 0 - activeGraph {{5}  {-}  {1}  {20}  {No}  {No}  {50}  {10}  {auto}  {Parameter}} 1} {At X} $graph]
+if {[lsearch $sigs(wfIdx,load) $sigs(Signal0,idx,saved)] != -1} {
+set measCmd [Graph:ReplaceMeasElements1 {GrMeas:AtX $graph Signal0 {200 --} xyrangeAll 0 - activeGraph {{5}  {-}  {1}  {20}  {No}  {No}  {50}  {10}  {auto}  {Parameter}} 1} {At X} $graph]
 if {$measCmd != ""} {
 set mindex [eval $measCmd]
 set fail [expr [isvalid integer $mindex] && {$mindex < 0}]
@@ -201,19 +247,8 @@ if {! $fail} {
 }
 }
 }
-if {[lsearch $sigs(wfIdx,load) $sigs(Signal28,idx,saved)] != -1} {
-set measCmd [Graph:ReplaceMeasElements1 {GrMeas:Levels $graph Signal28  {Minimum} xyrangeAll 0 -  activeGraph {{5}  {-}  {1}  {20}  {No}  {No}  {50}  {10}  {auto}  {Parameter}} 1} {Levels} $graph]
-if {$measCmd != ""} {
-set mindex [eval $measCmd]
-set fail [expr [isvalid integer $mindex] && {$mindex < 0}]
-if {! $fail} {
-  global Meas_${graph}_${mindex}
-  set Meas_${graph}_${mindex}(0,lblanchor)  ne
-}
-}
-}
-if {[lsearch $sigs(wfIdx,load) $sigs(Signal28,idx,saved)] != -1} {
-set measCmd [Graph:ReplaceMeasElements1 {GrMeas:AtX $graph Signal28 {100 --} xyrangeAll 0 - activeGraph {{5}  {-}  {1}  {20}  {No}  {No}  {50}  {10}  {auto}  {Parameter}} 1} {At X} $graph]
+if {[lsearch $sigs(wfIdx,load) $sigs(Signal0,idx,saved)] != -1} {
+set measCmd [Graph:ReplaceMeasElements1 {GrMeas:AtX $graph Signal0 {5000 --} xyrangeAll 0 - activeGraph {{5}  {-}  {1}  {20}  {No}  {No}  {50}  {10}  {auto}  {Parameter}} 1} {At X} $graph]
 if {$measCmd != ""} {
 set mindex [eval $measCmd]
 set fail [expr [isvalid integer $mindex] && {$mindex < 0}]
@@ -224,32 +259,8 @@ if {! $fail} {
 }
 }
 }
-if {[lsearch $sigs(wfIdx,load) $sigs(Signal28,idx,saved)] != -1} {
-set measCmd [Graph:ReplaceMeasElements1 {GrMeas:HighLow $graph Signal28  {Lowpass} default - 3 xyrangeAll  0 - activeGraph {{5}  {-}  {1}  {20}  {No}  {No}  {50}  {10}  {auto}  {Parameter}} 1} {Lowpass} $graph]
-if {$measCmd != ""} {
-set mindex [eval $measCmd]
-set fail [expr [isvalid integer $mindex] && {$mindex < 0}]
-if {! $fail} {
-  global Meas_${graph}_${mindex}
-  set Meas_${graph}_${mindex}(1,lblx) 30
-  set Meas_${graph}_${mindex}(1,lbly) 30
-}
-}
-}
-if {[lsearch $sigs(wfIdx,load) $sigs(Signal28,idx,saved)] != -1} {
-set measCmd [Graph:ReplaceMeasElements1 {GrMeas:HighLow $graph Signal28  {Highpass} default - 3 xyrangeAll  0 - activeGraph {{5}  {-}  {1}  {20}  {No}  {No}  {50}  {10}  {auto}  {Parameter}} 1} {Highpass} $graph]
-if {$measCmd != ""} {
-set mindex [eval $measCmd]
-set fail [expr [isvalid integer $mindex] && {$mindex < 0}]
-if {! $fail} {
-  global Meas_${graph}_${mindex}
-  set Meas_${graph}_${mindex}(1,lblx) 30
-  set Meas_${graph}_${mindex}(1,lbly) 30
-}
-}
-}
-if {[lsearch $sigs(wfIdx,load) $sigs(Signal29,idx,saved)] != -1} {
-set measCmd [Graph:ReplaceMeasElements1 {GrMeas:AtX $graph Signal29 {200 --} xyrangeAll 0 - activeGraph {{5}  {-}  {1}  {20}  {No}  {No}  {50}  {10}  {auto}  {Parameter}} 1} {At X} $graph]
+if {[lsearch $sigs(wfIdx,load) $sigs(Signal1,idx,saved)] != -1} {
+set measCmd [Graph:ReplaceMeasElements1 {GrMeas:AtX $graph Signal1 {5000 --} xyrangeAll 0 - activeGraph {{5}  {-}  {1}  {20}  {No}  {No}  {50}  {10}  {auto}  {Parameter}} 1} {At X} $graph]
 if {$measCmd != ""} {
 set mindex [eval $measCmd]
 set fail [expr [isvalid integer $mindex] && {$mindex < 0}]
@@ -260,8 +271,8 @@ if {! $fail} {
 }
 }
 }
-if {[lsearch $sigs(wfIdx,load) $sigs(Signal29,idx,saved)] != -1} {
-set measCmd [Graph:ReplaceMeasElements1 {GrMeas:AtX $graph Signal29 {5000 --} xyrangeAll 0 - activeGraph {{5}  {-}  {1}  {20}  {No}  {No}  {50}  {10}  {auto}  {Parameter}} 1} {At X} $graph]
+if {[lsearch $sigs(wfIdx,load) $sigs(Signal2,idx,saved)] != -1} {
+set measCmd [Graph:ReplaceMeasElements1 {GrMeas:AtX $graph Signal2 {5000 --} xyrangeAll 0 - activeGraph {{5}  {-}  {1}  {20}  {No}  {No}  {50}  {10}  {auto}  {Parameter}} 1} {At X} $graph]
 if {$measCmd != ""} {
 set mindex [eval $measCmd]
 set fail [expr [isvalid integer $mindex] && {$mindex < 0}]
@@ -269,53 +280,6 @@ if {! $fail} {
   global Meas_${graph}_${mindex}
   set Meas_${graph}_${mindex}(0,lblx) 30
   set Meas_${graph}_${mindex}(0,lbly) 30
-}
-}
-}
-if {[lsearch $sigs(wfIdx,load) $sigs(Signal29,idx,saved)] != -1} {
-set measCmd [Graph:ReplaceMeasElements1 {GrMeas:Levels $graph Signal29  {Maximum} xyrangeAll 0 -  activeGraph {{5}  {-}  {1}  {20}  {No}  {No}  {50}  {10}  {auto}  {Parameter}} 1} {Levels} $graph]
-if {$measCmd != ""} {
-set mindex [eval $measCmd]
-set fail [expr [isvalid integer $mindex] && {$mindex < 0}]
-if {! $fail} {
-  global Meas_${graph}_${mindex}
-  set Meas_${graph}_${mindex}(0,lblanchor)  se
-}
-}
-}
-if {[lsearch $sigs(wfIdx,load) $sigs(Signal29,idx,saved)] != -1} {
-set measCmd [Graph:ReplaceMeasElements1 {GrMeas:AtX $graph Signal29 {100 --} xyrangeAll 0 - activeGraph {{5}  {-}  {1}  {20}  {No}  {No}  {50}  {10}  {auto}  {Parameter}} 1} {At X} $graph]
-if {$measCmd != ""} {
-set mindex [eval $measCmd]
-set fail [expr [isvalid integer $mindex] && {$mindex < 0}]
-if {! $fail} {
-  global Meas_${graph}_${mindex}
-  set Meas_${graph}_${mindex}(0,lblx) 30
-  set Meas_${graph}_${mindex}(0,lbly) 30
-}
-}
-}
-if {[lsearch $sigs(wfIdx,load) $sigs(Signal29,idx,saved)] != -1} {
-set measCmd [Graph:ReplaceMeasElements1 {GrMeas:HighLow $graph Signal29  {Lowpass} default - 3 xyrangeAll  0 - activeGraph {{5}  {-}  {1}  {20}  {No}  {No}  {50}  {10}  {auto}  {Parameter}} 1} {Lowpass} $graph]
-if {$measCmd != ""} {
-set mindex [eval $measCmd]
-set fail [expr [isvalid integer $mindex] && {$mindex < 0}]
-if {! $fail} {
-  global Meas_${graph}_${mindex}
-  set Meas_${graph}_${mindex}(1,lblx) 30
-  set Meas_${graph}_${mindex}(1,lbly) 30
-}
-}
-}
-if {[lsearch $sigs(wfIdx,load) $sigs(Signal29,idx,saved)] != -1} {
-set measCmd [Graph:ReplaceMeasElements1 {GrMeas:HighLow $graph Signal29  {Highpass} default - 3 xyrangeAll  0 - activeGraph {{5}  {-}  {1}  {20}  {No}  {No}  {50}  {10}  {auto}  {Parameter}} 1} {Highpass} $graph]
-if {$measCmd != ""} {
-set mindex [eval $measCmd]
-set fail [expr [isvalid integer $mindex] && {$mindex < 0}]
-if {! $fail} {
-  global Meas_${graph}_${mindex}
-  set Meas_${graph}_${mindex}(1,lblx) 30
-  set Meas_${graph}_${mindex}(1,lbly) 30
 }
 }
 }

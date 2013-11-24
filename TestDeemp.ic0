@@ -1,7 +1,7 @@
 * "simulator" "HSPICE" 
 * "version" "H-2013.03 64-BIT"
 * "format" "HSP"
-* "rundate" "21:59:49 11/24/2013 "
+* "rundate" "22:53:27 11/24/2013 "
 * "netlist" "TestDeemp.cir "
 * "runtitle" "deemp test netlist"
 * time =    0.            
