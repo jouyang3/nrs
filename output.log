@@ -1,0 +1,32 @@
+ ****** HSPICE -- H-2013.03 32-BIT (Mar  7 2013) win32 ******                   
+  Copyright (C) 2013 Synopsys, Inc. All Rights Reserved.                        
+  Unpublished-rights reserved under US copyright laws.
+  This program is protected by law and is subject to the
+  terms and conditions of the license agreement from Synopsys.
+  Use of this program is your acceptance to be bound by the
+  license agreement. HSPICE is the trademark of Synopsys, Inc.
+  Input File: driver.cir                                                        
+  Command line options: driver.cir
+  lic:  
+  lic: FLEXlm: v10.9.8 
+  lic: USER:   jun                  HOSTNAME: moobilenet-101-51.ucdavis.edu 
+  lic: HOSTID: "000000000000 000000000000 28cfe91bd273 320016218600 320016218601
+  0acfe91bd273" PID:  
+  lic: Using FLEXlm license files: 
+  lic: c:\synopsys\lic.dat 
+  lic: Feature start date is in the future. Feature:       hspice License path: 
+   
+  lic: Unable to checkout (hspice) 
+  lic:   
+  lic:  
+  lic: FLEXlm: v10.9.8 
+  lic: USER:   jun                  HOSTNAME: moobilenet-101-51.ucdavis.edu 
+  lic: HOSTID: "000000000000 000000000000 28cfe91bd273 320016218600 320016218601
+  0acfe91bd273" PID:  
+  lic: Using FLEXlm license files: 
+  lic: c:\synopsys\lic.dat 
+  lic: Feature start date is in the future. Feature:       hspicewin License pat
+ h 
+  lic: Unable to checkout (hspicewin) 
+  lic:   
+ lic: total license checkout elapse time:        1.49(s)

@@ -3,4 +3,4 @@
 Rf	n	out	R=(a*1k)
 Ri	in	n	1k
 X1	0	n	out	popamp
-.ENDS pgain
+.ENDS gain
