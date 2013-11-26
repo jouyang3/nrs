@@ -1,7 +1,7 @@
 * "simulator" "HSPICE" 
 * "version" "H-2013.03 64-BIT"
 * "format" "HSP"
-* "rundate" "22:53:22 11/24/2013 "
+* "rundate" "12:22:32 11/26/2013 "
 * "netlist" "TestPreemp.cir "
 * "runtitle" "preemp test netlist"
 * time =    0.            
