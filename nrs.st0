@@ -3,14 +3,14 @@
  lic:
  lic: FLEXlm: v10.9.8
  lic: USER:   Jun                  HOSTNAME: Jun-PC
- lic: HOSTID: "28cfe91bd273 28cfe91bd274 005056c00001 005056c00008" PID:      4088
+ lic: HOSTID: "28cfe91bd273 28cfe91bd274 005056c00001 005056c00008" PID:      5840
  lic: Using FLEXlm license file:
  lic: 27000@Jun-PC
  lic: Checkout 1 hspice
  lic: License/Maintenance for hspice will expire on 31-dec-2019/2019.12
  lic: NODE LOCKED license on hostid "28cfe91bd273 28cfe91bd274 005056c00001 005056c00008"
  lic:
- init: begin read circuit files,  cpu clock=  5.53E+00
+ init: begin read circuit files,  cpu clock=  4.60E+00
        option search = C:\synopsys\Hspice_H-2013.03\PARTS\behave\
        option search = C:\synopsys\Hspice_H-2013.03\PARTS\behave\
        option search = C:\synopsys\Hspice_H-2013.03\PARTS\AD\
@@ -31,17 +31,17 @@
        option runlvl
        option list
        option post
- init: end read circuit files,  cpu clock=  5.53E+00 peak memory=        60 mb
- init: begin check errors,  cpu clock=  5.53E+00
- init: end check errors,  cpu clock=  5.53E+00 peak memory=        60 mb
- init: begin setup matrix, pivot=     0 cpu clock=  5.53E+00
-       establish matrix -- done,  cpu clock=  5.53E+00 peak memory=        60 mb
-       re-order matrix -- done,  cpu clock=  5.53E+00 peak memory=        60 mb
- init: end setup matrix,  cpu clock=  5.53E+00 peak memory=        60 mb
- dcop: begin dcop,  cpu clock=  5.53E+00
- dcop: end dcop,  cpu clock=  5.54E+00 peak memory=        60 mb  tot_iter=       3
+ init: end read circuit files,  cpu clock=  4.60E+00 peak memory=        62 mb
+ init: begin check errors,  cpu clock=  4.60E+00
+ init: end check errors,  cpu clock=  4.60E+00 peak memory=        63 mb
+ init: begin setup matrix, pivot=     0 cpu clock=  4.60E+00
+       establish matrix -- done,  cpu clock=  4.60E+00 peak memory=        63 mb
+       re-order matrix -- done,  cpu clock=  4.60E+00 peak memory=        63 mb
+ init: end setup matrix,  cpu clock=  4.60E+00 peak memory=        63 mb
+ dcop: begin dcop,  cpu clock=  4.60E+00
+ dcop: end dcop,  cpu clock=  4.61E+00 peak memory=        63 mb  tot_iter=       3
  output: nrs.ac0
- sweep: ac ac0    begin, #sweeps=  81 cpu clock=  5.54E+00
+ sweep: ac ac0    begin, #sweeps=  81 cpu clock=  4.61E+00
  ac: frequency=    1.06E+02
  ac: frequency=    1.58E+02
  ac: frequency=    2.51E+02
@@ -53,6 +53,6 @@
  ac: frequency=    3.98E+03
  ac: frequency=    6.31E+03
  ac: frequency=    1.00E+04
- sweep: ac ac0    end,  cpu clock=  5.54E+00 peak memory=        60 mb
+ sweep: ac ac0    end,  cpu clock=  4.61E+00 peak memory=        63 mb
 >info:         ***** hspice job concluded
  lic: Release hspice token(s)

@@ -10,8 +10,8 @@
   lic:  
   lic: FLEXlm: v10.9.8 
   lic: USER:   Jun                  HOSTNAME: Jun-PC 
-  lic: HOSTID: "28cfe91bd273 28cfe91bd274 005056c00001 005056c00008" PID:      4
- 088 
+  lic: HOSTID: "28cfe91bd273 28cfe91bd274 005056c00001 005056c00008" PID:      5
+ 840 
   lic: Using FLEXlm license file: 
   lic: 27000@Jun-PC 
   lic: Checkout 1 hspice 
@@ -619,12 +619,12 @@ y
   output             0.00
 
 
-           peak memory used         60.49 megabytes
+           peak memory used         63.03 megabytes
            total cpu time            0.01 seconds
-           total elapsed time        5.54 seconds
-           job started at     12:22:26 11/26/2013
-           job ended   at     12:22:32 11/26/2013
+           total elapsed time        4.61 seconds
+           job started at     14:16:56 11/27/2013
+           job ended   at     14:17:01 11/27/2013
 
 
   lic: Release hspice token(s) 
- lic: total license checkout elapse time:        5.52(s)
+ lic: total license checkout elapse time:        4.59(s)

@@ -1,7 +1,7 @@
 * "simulator" "HSPICE" 
 * "version" "H-2013.03 64-BIT"
 * "format" "HSP"
-* "rundate" "12:22:26 11/26/2013 "
+* "rundate" "14:16:56 11/27/2013 "
 * "netlist" "nrs.cir "
 * "runtitle" "noise reduction system - main"
 * time =    0.            
