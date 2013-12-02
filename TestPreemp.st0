@@ -1,16 +1,16 @@
-***** HSPICE -- H-2013.03 64-BIT (Mar  7 2013) win64 ******
+***** HSPICE -- H-2013.03 32-BIT (Mar  7 2013) win32 ******
  Input File: TestPreemp.cir
  lic:
  lic: FLEXlm: v10.9.8
- lic: USER:   Jun                  HOSTNAME: Jun-PC
- lic: HOSTID: "28cfe91bd273 28cfe91bd274 005056c00001 005056c00008" PID:      5940
+ lic: USER:   jun                  HOSTNAME: jun@localhost
+ lic: HOSTID: "000000000000 000000000000 28cfe91bd273 320016218600 320016218601 0acfe91bd273 001c420
  lic: Using FLEXlm license file:
- lic: 27000@Jun-PC
+ lic: 27000@Juns-MacBook-Pro.local
  lic: Checkout 1 hspice
  lic: License/Maintenance for hspice will expire on 31-dec-2019/2019.12
- lic: NODE LOCKED license on hostid "28cfe91bd273 28cfe91bd274 005056c00001 005056c00008"
+ lic: NODE LOCKED license on hostid "000000000000 000000000000 28cfe91bd273 320016218600 32001621860
  lic:
- init: begin read circuit files,  cpu clock=  4.56E+00
+ init: begin read circuit files,  cpu clock=  2.47E+00
        option search = C:\synopsys\Hspice_H-2013.03\PARTS\behave\
        option search = C:\synopsys\Hspice_H-2013.03\PARTS\behave\
        option search = C:\synopsys\Hspice_H-2013.03\PARTS\AD\
@@ -31,17 +31,17 @@
        option runlvl
        option list
        option post
- init: end read circuit files,  cpu clock=  4.56E+00 peak memory=        62 mb
- init: begin check errors,  cpu clock=  4.56E+00
- init: end check errors,  cpu clock=  4.56E+00 peak memory=        63 mb
- init: begin setup matrix, pivot=     0 cpu clock=  4.56E+00
-       establish matrix -- done,  cpu clock=  4.56E+00 peak memory=        63 mb
-       re-order matrix -- done,  cpu clock=  4.56E+00 peak memory=        63 mb
- init: end setup matrix,  cpu clock=  4.56E+00 peak memory=        63 mb
- dcop: begin dcop,  cpu clock=  4.56E+00
- dcop: end dcop,  cpu clock=  4.56E+00 peak memory=        63 mb  tot_iter=       3
+ init: end read circuit files,  cpu clock=  2.47E+00 peak memory=         0 mb
+ init: begin check errors,  cpu clock=  2.47E+00
+ init: end check errors,  cpu clock=  2.48E+00 peak memory=         0 mb
+ init: begin setup matrix, pivot=     0 cpu clock=  2.48E+00
+       establish matrix -- done,  cpu clock=  2.48E+00 peak memory=         0 mb
+       re-order matrix -- done,  cpu clock=  2.48E+00 peak memory=         0 mb
+ init: end setup matrix,  cpu clock=  2.48E+00 peak memory=         0 mb
+ dcop: begin dcop,  cpu clock=  2.48E+00
+ dcop: end dcop,  cpu clock=  2.48E+00 peak memory=         0 mb  tot_iter=       3
  output: TestPreemp.ac0
- sweep: ac ac0    begin, #sweeps=  81 cpu clock=  4.56E+00
+ sweep: ac ac0    begin, #sweeps=  81 cpu clock=  2.48E+00
  ac: frequency=    1.06E+02
  ac: frequency=    1.58E+02
  ac: frequency=    2.51E+02
@@ -53,6 +53,6 @@
  ac: frequency=    3.98E+03
  ac: frequency=    6.31E+03
  ac: frequency=    1.00E+04
- sweep: ac ac0    end,  cpu clock=  4.56E+00 peak memory=        63 mb
+ sweep: ac ac0    end,  cpu clock=  2.48E+00 peak memory=         0 mb
 >info:         ***** hspice job concluded
  lic: Release hspice token(s)
