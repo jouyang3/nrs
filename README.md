@@ -677,12 +677,12 @@ y
 
 
            peak memory used          0.00 megabytes
-           total cpu time            0.03 seconds
-           total elapsed time        2.49 seconds
-           job started at     12:39:49 12/02/2013
-           job ended   at     12:39:52 12/02/2013
+           total cpu time            0.05 seconds
+           total elapsed time        2.53 seconds
+           job started at     17:39:43 12/02/2013
+           job ended   at     17:39:46 12/02/2013
 
 
   lic: Release hspice token(s) 
- lic: total license checkout elapse time:        2.45(s)
+ lic: total license checkout elapse time:        2.47(s)
 ```
