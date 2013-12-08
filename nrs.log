@@ -1,630 +1,677 @@
- ****** HSPICE -- H-2013.03 32-BIT (Mar  7 2013) win32 ******                   
-  Copyright (C) 2013 Synopsys, Inc. All Rights Reserved.                        
-  Unpublished-rights reserved under US copyright laws.
-  This program is protected by law and is subject to the
-  terms and conditions of the license agreement from Synopsys.
-  Use of this program is your acceptance to be bound by the
-  license agreement. HSPICE is the trademark of Synopsys, Inc.
-  Input File: nrs.cir                                                           
-  Command line options: nrs.cir
-  lic:  
-  lic: FLEXlm: v10.9.8 
-  lic: USER:   jun                  HOSTNAME: jun@localhost 
-  lic: HOSTID: "000000000000 000000000000 28cfe91bd273 320016218600 320016218601
-  0acfe91bd273" PID:  
-  lic: Using FLEXlm license file: 
-  lic: 27000@Juns-MacBook-Pro.local 
-  lic: Checkout 1 hspice 
-  lic: License/Maintenance for hspice will expire on 31-dec-2019/2019.12 
-  lic: NODE LOCKED license on hostid "000000000000 000000000000 28cfe91bd273 320
- 016218600 32001621860
-  lic:   
- Init: read install configuration file: C:\synopsys\Hspice_H-2013.03\meta.cfg
- scientific notation:
- a=10**-18  f=10**-15  p=10**-12  n=10**-9  u=10**-6
- m=10**-3   k=10**3    x=10**6    g=10**9 
-1****** HSPICE -- H-2013.03 32-BIT (Mar  7 2013) win32 ******                   
- ******  
- noise reduction system - main
-
-  ******  circuit name directory
- circuit number to circuit name directory
-   number circuitname                     definition         multiplier
-        0 main circuit
-        1 xpe.                            preemp             1.00 
-        2 xde.                            deemp              1.00 
-        3 xpe.xhp.                        hp                 1.00 
-        4 xpe.xlp.                        lp                 1.00 
-        5 xpe.xg.                         gain               1.00 
-        6 xde.xlp.                        lp                 1.00 
-        7 xde.xhp.                        hp                 1.00 
-        8 xde.xsum.                       sum                1.00 
-        9 xde.xg.                         gain               1.00 
-       10 xpe.xhp.x1.                     popamp             1.00 
-       11 xpe.xlp.x1.                     popamp             1.00 
-       12 xpe.xg.x1.                      popamp             1.00 
-       13 xde.xlp.x1.                     popamp             1.00 
-       14 xde.xhp.x1.                     popamp             1.00 
-       15 xde.xsum.x1.                    popamp             1.00 
-       16 xde.xg.x1.                      popamp             1.00 
-
-
- circuit parameter definitions
-  parameter          =  value 
-
-     0:pi                                                      =   3.1416       
-     0:w0                                                      =   6.2832k      
-     1:khf                                                     =   3.3301k      
-     1:klf                                                     =  11.8551k      
-     2:khf                                                     =  64.7751k      
-     2:klf                                                     = 609.4690       
-     3:kf                                                      =   3.3301k      
-     3:c                                                       =   2.0000n      
-     3:km                                                      = 150.1462k      
-     4:kf                                                      =  11.8551k      
-     4:r                                                       = 120.0000k      
-     4:km                                                      = 120.0000k      
-     5:a                                                       =  28.1838       
-     6:kf                                                      = 609.4690       
-     6:r                                                       = 120.0000k      
-     6:km                                                      = 120.0000k      
-     7:kf                                                      =  64.7751k      
-     7:c                                                       =   2.0000n      
-     7:km                                                      =   7.7190k      
-     9:a                                                       =   1.4962       
-
-
-
-
- constants  - tnom         kt           vt           gapsi        ni
-            298.15000    4.1163e-21    25.69184m     1.11562    1.2565e+16 
-1****** HSPICE -- H-2013.03 32-BIT (Mar  7 2013) win32 ******                   
- ******  
- noise reduction system - main
-
-  ******  circuit element summary tnom=  25.000 temp=  25.000 *****
-
-
- **** resistors
-
-  
-  
-                                                              
- element name        3:r1       3:r2       4:r1       4:r2    
- node1               3:1        3:p        1:1        4:1     
- node2               1:1        0:0        4:1        4:p     
- model                                                        
- res eff           106.1533k  212.3067k  120.0000k  120.0000k 
- tc1                 0.         0.         0.         0.      
- tc2                 0.         0.         0.         0.      
- scale               1.0000     1.0000     1.0000     1.0000  
- m                   1.0000     1.0000     1.0000     1.0000  
- ac                106.1533k  212.3067k  120.0000k  120.0000k 
- temp               25.0000    25.0000    25.0000    25.0000  
- l                   0.         0.         0.         0.      
- w                   0.         0.         0.         0.      
- cap                 0.         0.         0.         0.      
- noise            1.000e+00  1.000e+00  1.000e+00  1.000e+00  
-  
-  
-                                                              
- element name        5:rf       5:ri       6:r1       6:r2    
- node1               5:n        1:2        0:2        6:1     
- node2               0:2        5:n        6:1        6:p     
- model                                                        
- res eff            28.1838k    1.0000k  120.0000k  120.0000k 
- tc1                 0.         0.         0.         0.      
- tc2                 0.         0.         0.         0.      
- scale               1.0000     1.0000     1.0000     1.0000  
- m                   1.0000     1.0000     1.0000     1.0000  
- ac                 28.1838k    1.0000k  120.0000k  120.0000k 
- temp               25.0000    25.0000    25.0000    25.0000  
- l                   0.         0.         0.         0.      
- w                   0.         0.         0.         0.      
- cap                 0.         0.         0.         0.      
- noise            1.000e+00  1.000e+00  1.000e+00  1.000e+00  
-  
-  
-                                                              
- element name        7:r1       7:r2       8:r1       8:r2    
- node1               7:1        7:p        2:1        2:2     
- node2               2:2        0:0        8:n        8:n     
- model                                                        
- res eff             5.4573k   10.9147k   10.0000k   10.0000k 
- tc1                 0.         0.         0.         0.      
- tc2                 0.         0.         0.         0.      
- scale               1.0000     1.0000     1.0000     1.0000  
- m                   1.0000     1.0000     1.0000     1.0000  
- ac                  5.4573k   10.9147k   10.0000k   10.0000k 
- temp               25.0000    25.0000    25.0000    25.0000  
- l                   0.         0.         0.         0.      
- w                   0.         0.         0.         0.      
- cap                 0.         0.         0.         0.      
- noise            1.000e+00  1.000e+00  1.000e+00  1.000e+00  
-  
-  
-                                                              
- element name        8:rf       9:rf       9:ri      10:ri    
- node1               8:n        9:n        2:3        3:p     
- node2               2:3        0:3        9:n        1:1     
- model                                                        
- res eff            10.0000k    1.4962k    1.0000k    2.0000x 
- tc1                 0.         0.         0.         0.      
- tc2                 0.         0.         0.         0.      
- scale               1.0000     1.0000     1.0000     1.0000  
- m                   1.0000     1.0000     1.0000     1.0000  
- ac                 10.0000k    1.4962k    1.0000k    2.0000x 
- temp               25.0000    25.0000    25.0000    25.0000  
- l                   0.         0.         0.         0.      
- w                   0.         0.         0.         0.      
- cap                 0.         0.         0.         0.      
- noise            1.000e+00  1.000e+00  1.000e+00  1.000e+00  
-  
-  
-                                                           
- element name       10:r      10:ro     11:ri      11:r    
- node1              10:1      10:6       4:p       11:1    
- node2              10:3       1:1       1:2       11:3    
- model                                                     
- res eff             1.0000   75.0000    2.0000x    1.0000 
- tc1                 0.        0.        0.         0.     
- tc2                 0.        0.        0.         0.     
- scale               1.0000    1.0000    1.0000     1.0000 
- m                   1.0000    1.0000    1.0000     1.0000 
- ac                  1.0000   75.0000    2.0000x    1.0000 
- temp               25.0000   25.0000   25.0000    25.0000 
- l                   0.        0.        0.         0.     
- w                   0.        0.        0.         0.     
- cap                 0.        0.        0.         0.     
- noise            1.000e+00 1.000e+00 1.000e+00  1.000e+00 
-  
-  
-                                                           
- element name       11:ro     12:ri      12:r      12:ro   
- node1              11:6       0:0       12:1      12:6    
- node2               1:2       5:n       12:3       0:2    
- model                                                     
- res eff            75.0000    2.0000x    1.0000   75.0000 
- tc1                 0.        0.         0.        0.     
- tc2                 0.        0.         0.        0.     
- scale               1.0000    1.0000     1.0000    1.0000 
- m                   1.0000    1.0000     1.0000    1.0000 
- ac                 75.0000    2.0000x    1.0000   75.0000 
- temp               25.0000   25.0000    25.0000   25.0000 
- l                   0.        0.         0.        0.     
- w                   0.        0.         0.        0.     
- cap                 0.        0.         0.        0.     
- noise            1.000e+00 1.000e+00  1.000e+00 1.000e+00 
-  
-  
-                                                            
- element name       13:ri      13:r      13:ro     14:ri    
- node1               6:p       13:1      13:6       7:p     
- node2               2:1       13:3       2:1       2:2     
- model                                                      
- res eff             2.0000x    1.0000   75.0000    2.0000x 
- tc1                 0.         0.        0.        0.      
- tc2                 0.         0.        0.        0.      
- scale               1.0000     1.0000    1.0000    1.0000  
- m                   1.0000     1.0000    1.0000    1.0000  
- ac                  2.0000x    1.0000   75.0000    2.0000x 
- temp               25.0000    25.0000   25.0000   25.0000  
- l                   0.         0.        0.        0.      
- w                   0.         0.        0.        0.      
- cap                 0.         0.        0.        0.      
- noise            1.000e+00  1.000e+00 1.000e+00 1.000e+00  
-  
-  
-                                                           
- element name       14:r      14:ro     15:ri      15:r    
- node1              14:1      14:6       0:0       15:1    
- node2              14:3       2:2       8:n       15:3    
- model                                                     
- res eff             1.0000   75.0000    2.0000x    1.0000 
- tc1                 0.        0.        0.         0.     
- tc2                 0.        0.        0.         0.     
- scale               1.0000    1.0000    1.0000     1.0000 
- m                   1.0000    1.0000    1.0000     1.0000 
- ac                  1.0000   75.0000    2.0000x    1.0000 
- temp               25.0000   25.0000   25.0000    25.0000 
- l                   0.        0.        0.         0.     
- w                   0.        0.        0.         0.     
- cap                 0.        0.        0.         0.     
- noise            1.000e+00 1.000e+00 1.000e+00  1.000e+00 
-  
-  
-                                                           
- element name       15:ro     16:ri      16:r      16:ro   
- node1              15:6       0:0       16:1      16:6    
- node2               2:3       9:n       16:3       0:3    
- model                                                     
- res eff            75.0000    2.0000x    1.0000   75.0000 
- tc1                 0.        0.         0.        0.     
- tc2                 0.        0.         0.        0.     
- scale               1.0000    1.0000     1.0000    1.0000 
- m                   1.0000    1.0000     1.0000    1.0000 
- ac                 75.0000    2.0000x    1.0000   75.0000 
- temp               25.0000   25.0000    25.0000   25.0000 
- l                   0.        0.         0.        0.     
- w                   0.        0.         0.        0.     
- cap                 0.        0.         0.        0.     
- noise            1.000e+00 1.000e+00  1.000e+00 1.000e+00 
-
-
- **** capacitors
-  
-  
-                                                              
- element name        3:c1       3:c2       4:c1       4:c2    
- node1               0:1        3:1        4:1        4:p     
- node2               3:1        3:p        1:2        0:0     
- model                                                        
- cap eff             2.0000n    2.0000n  993.9491p  496.9746p 
- tc1                 0.         0.         0.         0.      
- tc2                 0.         0.         0.         0.      
- scale               1.0000     1.0000     1.0000     1.0000  
- ic                  0.         0.         0.         0.      
- m                   1.0000     1.0000     1.0000     1.0000  
- w                   0.         0.         0.         0.      
- l                   0.         0.         0.         0.      
- temp               25.0000    25.0000    25.0000    25.0000  
-  
-  
-                                                              
- element name        6:c1       6:c2       7:c1       7:c2    
- node1               6:1        6:p        0:2        7:1     
- node2               2:1        0:0        7:1        7:p     
- model                                                        
- cap eff            19.3338n    9.6669n    2.0000n    2.0000n 
- tc1                 0.         0.         0.         0.      
- tc2                 0.         0.         0.         0.      
- scale               1.0000     1.0000     1.0000     1.0000  
- ic                  0.         0.         0.         0.      
- m                   1.0000     1.0000     1.0000     1.0000  
- w                   0.         0.         0.         0.      
- l                   0.         0.         0.         0.      
- temp               25.0000    25.0000    25.0000    25.0000  
-  
-  
-                                                              
- element name       10:c       11:c       12:c       13:c     
- node1              10:3       11:3       12:3       13:3     
- node2               0:0        0:0        0:0        0:0     
- model                                                        
- cap eff            31.8300m   31.8300m   31.8300m   31.8300m 
- tc1                 0.         0.         0.         0.      
- tc2                 0.         0.         0.         0.      
- scale               1.0000     1.0000     1.0000     1.0000  
- ic                  0.         0.         0.         0.      
- m                   1.0000     1.0000     1.0000     1.0000  
- w                   0.         0.         0.         0.      
- l                   0.         0.         0.         0.      
- temp               25.0000    25.0000    25.0000    25.0000  
-  
-  
-                                                   
- element name       14:c       15:c       16:c     
- node1              14:3       15:3       16:3     
- node2               0:0        0:0        0:0     
- model                                             
- cap eff            31.8300m   31.8300m   31.8300m 
- tc1                 0.         0.         0.      
- tc2                 0.         0.         0.      
- scale               1.0000     1.0000     1.0000  
- ic                  0.         0.         0.      
- m                   1.0000     1.0000     1.0000  
- w                   0.         0.         0.      
- l                   0.         0.         0.      
- temp               25.0000    25.0000    25.0000  
-
-
- **** voltage-controlled voltage sources
-      name        +             -          dimension  function  scale
-       10:ei             10:1               0:0              1      poly       1.    
-       10:eo             10:6               0:0              1      poly       1.    
-       11:ei             11:1               0:0              1      poly       1.    
-       11:eo             11:6               0:0              1      poly       1.    
-       12:ei             12:1               0:0              1      poly       1.    
-       12:eo             12:6               0:0              1      poly       1.    
-       13:ei             13:1               0:0              1      poly       1.    
-       13:eo             13:6               0:0              1      poly       1.    
-       14:ei             14:1               0:0              1      poly       1.    
-       14:eo             14:6               0:0              1      poly       1.    
-       15:ei             15:1               0:0              1      poly       1.    
-       15:eo             15:6               0:0              1      poly       1.    
-       16:ei             16:1               0:0              1      poly       1.    
-       16:eo             16:6               0:0              1      poly       1.    
-
-
- **** independent sources
-
-     name         node1        node2      dc volt    ac mag    ac phase    type
-  vin  0                 1                    0.         1.0000     0.      dc   
-
-
- **** subcircuit calls
-    name        subcircuit         external nodes
-
-
-         0:xpe      preemp          0:1           0:2       
-         0:xde      deemp           0:2           0:3       
-         1:xhp      hp              0:1           1:1       
-         1:xlp      lp              1:1           1:2       
-         1:xg       gain            1:2           0:2       
-         2:xlp      lp              0:2           2:1       
-         2:xhp      hp              0:2           2:2       
-         2:xsum     sum             2:1           2:2           2:3       
-         2:xg       gain            2:3           0:3       
-         3:x1       popamp          3:p           1:1           1:1       
-         4:x1       popamp          4:p           1:2           1:2       
-         5:x1       popamp          0:0           5:n           0:2       
-         6:x1       popamp          6:p           2:1           2:1       
-         7:x1       popamp          7:p           2:2           2:2       
-         8:x1       popamp          0:0           8:n           2:3       
-         9:x1       popamp          0:0           9:n           0:3       
-  
-      
- *****************************************************************
- ******  option summary
- ******
- runlvl  = 3         bypass  = 2         
-  Opening plot unit= 79
- file=nrs.pa0
-
-1****** HSPICE -- H-2013.03 32-BIT (Mar  7 2013) win32 ******                   
- ******  
- noise reduction system - main
-
-  ******  operating point information tnom=  25.000 temp=  25.000 *****
- ***** operating point status is all       simulation time is     0.     
-     node    =voltage       node    =voltage       node    =voltage
-
- + 0:1       =   0.       0:2       =   0.       0:3       =   0.     
- + 1:1       =   0.       1:2       =   0.       2:1       =   0.     
- + 2:2       =   0.       2:3       =   0.       3:1       =   0.     
- + 3:p       =   0.       4:1       =   0.       4:p       =   0.     
- + 5:n       =   0.       6:1       =   0.       6:p       =   0.     
- + 7:1       =   0.       7:p       =   0.       8:n       =   0.     
- + 9:n       =   0.      10:1       =   0.      10:3       =   0.     
- +10:6       =   0.      11:1       =   0.      11:3       =   0.     
- +11:6       =   0.      12:1       =   0.      12:3       =   0.     
- +12:6       =   0.      13:1       =   0.      13:3       =   0.     
- +13:6       =   0.      14:1       =   0.      14:3       =   0.     
- +14:6       =   0.      15:1       =   0.      15:3       =   0.     
- +15:6       =   0.      16:1       =   0.      16:3       =   0.     
- +16:6       =   0.     
-
-
- **** voltage sources
-
- subckt              
- element   0:vin     
-  volts       0.     
-  current     0.     
-  power       0.     
-
-     total voltage source power dissipation=    0.            watts
-
-
-
- **** resistors
-
- subckt    xpe.xhp     xpe.xhp     xpe.xlp     xpe.xlp     xpe.xg    
- element   3:r1        3:r2        4:r1        4:r2        5:rf      
-  r value   106.1533k   212.3067k   120.0000k   120.0000k    28.1838k
-  v drop      0.          0.          0.          0.          0.     
-  current     0.          0.          0.          0.          0.     
-  power       0.          0.          0.          0.          0.     
-
- subckt    xpe.xg      xde.xlp     xde.xlp     xde.xhp     xde.xhp   
- element   5:ri        6:r1        6:r2        7:r1        7:r2      
-  r value     1.0000k   120.0000k   120.0000k     5.4573k    10.9147k
-  v drop      0.          0.          0.          0.          0.     
-  current     0.          0.          0.          0.          0.     
-  power       0.          0.          0.          0.          0.     
-
- subckt    xde.xsum    xde.xsum    xde.xsum    xde.xg      xde.xg    
- element   8:r1        8:r2        8:rf        9:rf        9:ri      
-  r value    10.0000k    10.0000k    10.0000k     1.4962k     1.0000k
-  v drop      0.          0.          0.          0.          0.     
-  current     0.          0.          0.          0.          0.     
-  power       0.          0.          0.          0.          0.     
-
- subckt    xpe.xhp.x1  xpe.xhp.x1  xpe.xhp.x1  xpe.xlp.x1  xpe.xlp.x1
- element  10:ri       10:r        10:ro       11:ri       11:r       
-  r value     2.0000x     1.0000     75.0000      2.0000x     1.0000 
-  v drop      0.          0.          0.          0.          0.     
-  current     0.          0.          0.          0.          0.     
-  power       0.          0.          0.          0.          0.     
-
- subckt    xpe.xlp.x1  xpe.xg.x1   xpe.xg.x1   xpe.xg.x1   xde.xlp.x1
- element  11:ro       12:ri       12:r        12:ro       13:ri      
-  r value    75.0000      2.0000x     1.0000     75.0000      2.0000x
-  v drop      0.          0.          0.          0.          0.     
-  current     0.          0.          0.          0.          0.     
-  power       0.          0.          0.          0.          0.     
-
- subckt    xde.xlp.x1  xde.xlp.x1  xde.xhp.x1  xde.xhp.x1  xde.xhp.x1
- element  13:r        13:ro       14:ri       14:r        14:ro      
-  r value     1.0000     75.0000      2.0000x     1.0000     75.0000 
-  v drop      0.          0.          0.          0.          0.     
-  current     0.          0.          0.          0.          0.     
-  power       0.          0.          0.          0.          0.     
-
- subckt    xde.xsum.x  xde.xsum.x  xde.xsum.x  xde.xg.x1   xde.xg.x1 
- element  15:ri       15:r        15:ro       16:ri       16:r       
-  r value     2.0000x     1.0000     75.0000      2.0000x     1.0000 
-  v drop      0.          0.          0.          0.          0.     
-  current     0.          0.          0.          0.          0.     
-  power       0.          0.          0.          0.          0.     
-
- subckt    xde.xg.x1 
- element  16:ro      
-  r value    75.0000 
-  v drop      0.     
-  current     0.     
-  power       0.     
-
-
- **** voltage-controlled voltage sources
-
-
- subckt      xpe.xhp.    xpe.xhp.    xpe.xlp.    xpe.xlp.    xpe.xg.x
- element  10:ei       10:eo       11:ei       11:eo       12:ei      
-  volts       0.          0.          0.          0.          0.     
-  current     0.          0.          0.          0.          0.     
-
-
-
- subckt      xpe.xg.x    xde.xlp.    xde.xlp.    xde.xhp.    xde.xhp.
- element  12:eo       13:ei       13:eo       14:ei       14:eo      
-  volts       0.          0.          0.          0.          0.     
-  current     0.          0.          0.          0.          0.     
-
-
-
- subckt      xde.xsum    xde.xsum    xde.xg.x    xde.xg.x
- element  15:ei       15:eo       16:ei       16:eo      
-  volts       0.          0.          0.          0.     
-  current     0.          0.          0.          0.     
-
-
-
- ******  
- noise reduction system - main
-
-  ******  ac analysis tnom=  25.000 temp=  25.000 *****
-x
-
-        freq    volt db    
-                     3     
-  100.00000     237.7513m  
-  105.92537     677.6387m  
-  112.20185       1.0615   
-  118.85022       1.3921   
-  125.89254       1.6732   
-  133.35214       1.9093   
-  141.25375       2.1053   
-  149.62357       2.2660   
-  158.48932       2.3960   
-  167.88040       2.4995   
-  177.82794       2.5803   
-  188.36491       2.6414   
-  199.52623       2.6853   
-  211.34890       2.7137   
-  223.87211       2.7281   
-  237.13737       2.7289   
-  251.18864       2.7164   
-  266.07251       2.6901   
-  281.83829       2.6489   
-  298.53826       2.5914   
-  316.22777       2.5156   
-  334.96544       2.4188   
-  354.81339       2.2983   
-  375.83740       2.1510   
-  398.10717       1.9737   
-  421.69650       1.7637   
-  446.68359       1.5189   
-  473.15126       1.2381   
-  501.18723     921.9947m  
-  530.88444     572.9137m  
-  562.34133     195.6548m  
-  595.66214    -202.6166m  
-  630.95734    -612.3749m  
-  668.34392      -1.0220   
-  707.94578      -1.4182   
-  749.89421      -1.7869   
-  794.32823      -2.1135   
-  841.39514      -2.3844   
-  891.25094      -2.5876   
-  944.06088      -2.7138   
-    1.00000k     -2.7568   
-    1.05925k     -2.7147   
-    1.12202k     -2.5895   
-    1.18850k     -2.3874   
-    1.25893k     -2.1176   
-    1.33352k     -1.7922   
-    1.41254k     -1.4251   
-    1.49624k     -1.0305   
-    1.58489k   -622.7324m  
-    1.67880k   -215.1012m  
-    1.77828k    180.8007m  
-    1.88365k    555.4573m  
-    1.99526k    901.7236m  
-    2.11349k      1.2149   
-    2.23872k      1.4925   
-    2.37137k      1.7340   
-    2.51189k      1.9406   
-    2.66073k      2.1143   
-    2.81838k      2.2579   
-    2.98538k      2.3746   
-    3.16228k      2.4673   
-    3.34965k      2.5389   
-    3.54813k      2.5918   
-    3.75837k      2.6280   
-    3.98107k      2.6488   
-    4.21697k      2.6552   
-    4.46684k      2.6475   
-    4.73151k      2.6255   
-    5.01187k      2.5884   
-    5.30884k      2.5346   
-    5.62341k      2.4621   
-    5.95662k      2.3682   
-    6.30957k      2.2495   
-    6.68344k      2.1020   
-    7.07946k      1.9210   
-    7.49894k      1.7015   
-    7.94328k      1.4383   
-    8.41395k      1.1260   
-    8.91251k    759.6846m  
-    9.44061k    335.2583m  
-   10.00000k   -150.4140m  
-y
------------------------------------------------
-
-          ***** job concluded
-1****** HSPICE -- H-2013.03 32-BIT (Mar  7 2013) win32 ******                   
- ******  
- noise reduction system - main
-
-  ******  job statistics summary tnom=  25.000 temp=  25.000 *****
-
-  ******  HSPICE Threads Information  ******
-
-  Command Line Threads Count :     1
-  Available CPU Count        :     8
-  Actual Threads Count       :     1
-
-
-  ******  Circuit Statistics  ******
-  # nodes       =      41 # elements   =      66
-  # resistors   =      36 # capacitors =      15 # inductors   =       0
-  # mutual_inds =       0 # vccs       =       0 # vcvs        =      14
-  # cccs        =       0 # ccvs       =       0 # volt_srcs   =       1
-  # curr_srcs   =       0 # diodes     =       0 # bjts        =       0
-  # jfets       =       0 # mosfets    =       0 # U elements  =       0
-  # T elements  =       0 # W elements =       0 # B elements  =       0
-  # S elements  =       0 # P elements =       0 # va device   =       0
-  # vector_srcs =       0 # N elements =       0
-
-
-  ******  Runtime Statistics (seconds)  ******
-
-  analysis           time    # points   tot. iter  conv.iter
-  op point           0.01           1           3
-  ac analysis        0.00          81          81
-  readin             0.01
-  errchk             0.01
-  setup              0.00
-  output             0.00
-
-
-           peak memory used          0.00 megabytes
-           total cpu time            0.04 seconds
-           total elapsed time        2.48 seconds
-           job started at     18:54:57 12/02/2013
-           job ended   at     18:54:59 12/02/2013
-
-
-  lic: Release hspice token(s) 
- lic: total license checkout elapse time:        2.44(s)
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  7 DEC 2013 21:25
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**nrs.tex
+(./nrs.tex
+LaTeX2e <2011/06/27>
+Babel <3.9f> and hyphenation patterns for 78 languages loaded.
+(/usr/local/texlive/2013/texmf-dist/tex/latex/IEEEtran/IEEEtran.cls
+Document Class: IEEEtran 2012/12/27 V1.8 by Michael Shell
+-- See the "IEEEtran_HOWTO" manual for usage information.
+-- http://www.michaelshell.org/tex/ieeetran/
+\@IEEEtrantmpdimenA=\dimen102
+\@IEEEtrantmpdimenB=\dimen103
+\@IEEEtrantmpcountA=\count79
+\@IEEEtrantmpcountB=\count80
+\@IEEEtrantmptoksA=\toks14
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 368.
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+-- Using 8.5in x 11in (letter) paper.
+-- Using PDF output.
+\@IEEEnormalsizeunitybaselineskip=\dimen104
+-- This is a 10 point document.
+\CLASSINFOnormalsizebaselineskip=\dimen105
+\CLASSINFOnormalsizeunitybaselineskip=\dimen106
+\IEEEnormaljot=\dimen107
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <17> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
+\IEEEilabelindentA=\dimen108
+\IEEEilabelindentB=\dimen109
+\IEEEilabelindent=\dimen110
+\IEEEelabelindent=\dimen111
+\IEEEdlabelindent=\dimen112
+\IEEElabelindent=\dimen113
+\IEEEiednormlabelsep=\dimen114
+\IEEEiedmathlabelsep=\dimen115
+\IEEEiedtopsep=\skip41
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@IEEEsubequation=\count85
+\abovecaptionskip=\skip42
+\belowcaptionskip=\skip43
+\c@figure=\count86
+\c@table=\count87
+\@IEEEeqnnumcols=\count88
+\@IEEEeqncolcnt=\count89
+\@IEEEsubeqnnumrollback=\count90
+\@IEEEtmpitemindent=\dimen116
+\c@IEEEbiography=\count91
+\@IEEEtranrubishbin=\box26
+) (/usr/local/texlive/2013/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip44
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2013/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks15
+\ex@=\dimen117
+))
+(/usr/local/texlive/2013/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen118
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count92
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count93
+\leftroot@=\count94
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count95
+\DOTSCASE@=\count96
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box27
+\strutbox@=\box28
+\big@size=\dimen119
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count97
+\c@MaxMatrixCols=\count98
+\dotsspace@=\muskip10
+\c@parentequation=\count99
+\dspbrk@lvl=\count100
+\tag@help=\toks16
+\row@=\count101
+\column@=\count102
+\maxfields@=\count103
+\andhelp@=\toks17
+\eqnshift@=\dimen120
+\alignsep@=\dimen121
+\tagshift@=\dimen122
+\tagwidth@=\dimen123
+\totwidth@=\dimen124
+\lineht@=\dimen125
+\@envbody=\toks18
+\multlinegap=\skip45
+\multlinetaggap=\skip46
+\mathdisplay@stack=\toks19
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks20
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count104
+))
+\Gin@req@height=\dimen126
+\Gin@req@width=\dimen127
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count105
+\lst@gtempboxa=\box29
+\lst@token=\toks21
+\lst@length=\count106
+\lst@currlwidth=\dimen128
+\lst@column=\count107
+\lst@pos=\count108
+\lst@lostspace=\dimen129
+\lst@width=\dimen130
+\lst@newlines=\count109
+\lst@lineno=\count110
+\lst@maxwidth=\dimen131
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
+\c@lstnumber=\count111
+\lst@skipnumbers=\count112
+\lst@framebox=\box30
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2007/02/22 1.4 listings configuration
+))
+Package: listings 2007/02/22 1.4 (Carsten Heinz)
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/blindtext/blindtext.sty
+Package: blindtext 2012/01/06 V2.0 blindtext-Package
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2009/10/20 v1.13 Space after command names (DPC,MH)
+)
+\c@blindtext=\count113
+\c@Blindtext=\count114
+\c@blind@countparstart=\count115
+\blind@countxx=\count116
+\blindtext@numBlindtext=\count117
+\blind@countyy=\count118
+\c@blindlist=\count119
+\c@blindlistlevel=\count120
+\c@blindlist@level=\count121
+\blind@listitem=\count122
+\c@blind@listcount=\count123
+\c@blind@levelcount=\count124
+\blind@mathformula=\count125
+\blind@Mathformula=\count126
+\c@blind@randomcount=\count127
+\c@blind@randommax=\count128
+\c@blind@pangramcount=\count129
+\c@blind@pangrammax=\count130
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2011/01/03 v2.1 e-TeX tools for LaTeX
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/etex-pkg/etex.sty
+Package: etex 1998/03/26 v2.0 eTeX basic definition package (PEB)
+\et@xins=\count131
+)
+\etb@tempcnta=\count132
+)
+
+Could not patch \@evenhead on input line 7.
+
+
+Could not patch \ps@IEEEpeerreviewcoverpagestyle on input line 7.
+
+
+LaTeX Warning: Unused global option(s):
+    [report].
+
+No file nrs.aux.
+\openout1 = `nrs.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+(/usr/local/texlive/2013/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count133
+\scratchdimen=\dimen132
+\scratchbox=\box31
+\nofMPsegments=\count134
+\nofMParguments=\count135
+\everyMPshowfont=\toks22
+\MPscratchCnt=\count136
+\MPscratchDim=\dimen133
+\MPnumerator=\count137
+\makeMPintoPDFobject=\count138
+\everyMPtoPDFconversion=\toks23
+) (/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+\c@lstlisting=\count139
+
+** WARNING: \and is valid only when in conference or peerreviewca
+modes (line 17).
+
+LaTeX Warning: Reference `spec:res:range' on page 1 undefined on input line 57.
+
+
+
+LaTeX Warning: Reference `spec:res:pg' on page 1 undefined on input line 57.
+
+
+LaTeX Warning: Reference `spec:hp:eq:n' on page 1 undefined on input line 80.
+
+[1{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+
+]
+Package epstopdf Info: Source file: <hp.eps>
+(epstopdf)                    date: 2013-12-06 03:53:40
+(epstopdf)                    size: 10368 bytes
+(epstopdf)             Output file: <hp-eps-converted-to.pdf>
+(epstopdf)                    date: 2013-12-06 04:17:52
+(epstopdf)                    size: 5608 bytes
+(epstopdf)             Command: <repstopdf --outfile=hp-eps-converted-to.pdf hp
+.eps>
+(epstopdf)             \includegraphics on input line 110.
+Package epstopdf Info: Output file is already uptodate.
+
+<hp-eps-converted-to.pdf, id=18, 339.2675pt x 180.675pt>
+File: hp-eps-converted-to.pdf Graphic file (type pdf)
+
+<use hp-eps-converted-to.pdf>
+Package pdftex.def Info: hp-eps-converted-to.pdf used on input line 110.
+(pdftex.def)             Requested size: 250.93842pt x 133.63399pt.
+Package epstopdf Info: Source file: <lp.eps>
+(epstopdf)                    date: 2013-12-06 03:38:03
+(epstopdf)                    size: 10427 bytes
+(epstopdf)             Output file: <lp-eps-converted-to.pdf>
+(epstopdf)                    date: 2013-12-06 06:01:05
+(epstopdf)                    size: 5602 bytes
+(epstopdf)             Command: <repstopdf --outfile=lp-eps-converted-to.pdf lp
+.eps>
+(epstopdf)             \includegraphics on input line 157.
+Package epstopdf Info: Output file is already uptodate.
+
+<lp-eps-converted-to.pdf, id=19, 321.2pt x 144.54pt>
+File: lp-eps-converted-to.pdf Graphic file (type pdf)
+
+<use lp-eps-converted-to.pdf>
+Package pdftex.def Info: lp-eps-converted-to.pdf used on input line 157.
+(pdftex.def)             Requested size: 250.93842pt x 112.92598pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+Package epstopdf Info: Source file: <gain.eps>
+(epstopdf)                    date: 2013-12-06 04:12:20
+(epstopdf)                    size: 9632 bytes
+(epstopdf)             Output file: <gain-eps-converted-to.pdf>
+(epstopdf)                    date: 2013-12-06 06:09:59
+(epstopdf)                    size: 5264 bytes
+(epstopdf)             Command: <repstopdf --outfile=gain-eps-converted-to.pdf 
+gain.eps>
+(epstopdf)             \includegraphics on input line 166.
+Package epstopdf Info: Output file is already uptodate.
+<gain-eps-converted-to.pdf, id=20, 242.9075pt x 137.51375pt>
+File: gain-eps-converted-to.pdf Graphic file (type pdf)
+
+<use gain-eps-converted-to.pdf>
+Package pdftex.def Info: gain-eps-converted-to.pdf used on input line 166.
+(pdftex.def)             Requested size: 200.75073pt x 113.64748pt.
+ [2 <./hp-eps-converted-to.pdf> <./lp-eps-converted-to.pdf> <./gain-eps-convert
+ed-to.pdf>]
+
+LaTeX Warning: Reference `spec:bw:lp:n2' on page 3 undefined on input line 188.
+
+
+
+LaTeX Warning: Reference `spec:bw:hp:n2' on page 3 undefined on input line 191.
+
+
+<sum.jpg, id=52, 770.88pt x 405.515pt>
+File: sum.jpg Graphic file (type jpg)
+ <use sum.jpg>
+Package pdftex.def Info: sum.jpg used on input line 197.
+(pdftex.def)             Requested size: 200.75073pt x 105.59846pt.
+
+
+Package Listings Warning: Text dropped after begin of listing on input line 232
+.
+
+Package epstopdf Info: Source file: <lp.eps>
+(epstopdf)                    date: 2013-12-06 03:38:03
+(epstopdf)                    size: 10427 bytes
+(epstopdf)             Output file: <lp-eps-converted-to.pdf>
+(epstopdf)                    date: 2013-12-06 06:01:05
+(epstopdf)                    size: 5602 bytes
+(epstopdf)             Command: <repstopdf --outfile=lp-eps-converted-to.pdf lp
+.eps>
+(epstopdf)             \includegraphics on input line 247.
+Package epstopdf Info: Output file is already uptodate.
+File: lp-eps-converted-to.pdf Graphic file (type pdf)
+<use lp-eps-converted-to.pdf>
+Package pdftex.def Info: lp-eps-converted-to.pdf used on input line 247.
+(pdftex.def)             Requested size: 250.93842pt x 112.92598pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[3 <./sum.jpg>]
+
+Package Listings Warning: Text dropped after begin of listing on input line 253
+.
+
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 257.
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 257.
+Package epstopdf Info: Source file: <hp.eps>
+(epstopdf)                    date: 2013-12-06 03:53:40
+(epstopdf)                    size: 10368 bytes
+(epstopdf)             Output file: <hp-eps-converted-to.pdf>
+(epstopdf)                    date: 2013-12-06 04:17:52
+(epstopdf)                    size: 5608 bytes
+(epstopdf)             Command: <repstopdf --outfile=hp-eps-converted-to.pdf hp
+.eps>
+(epstopdf)             \includegraphics on input line 268.
+Package epstopdf Info: Output file is already uptodate.
+File: hp-eps-converted-to.pdf Graphic file (type pdf)
+
+<use hp-eps-converted-to.pdf>
+Package pdftex.def Info: hp-eps-converted-to.pdf used on input line 268.
+(pdftex.def)             Requested size: 250.93842pt x 133.63399pt.
+
+
+Package Listings Warning: Text dropped after begin of listing on input line 276
+.
+
+Package epstopdf Info: Source file: <gain.eps>
+(epstopdf)                    date: 2013-12-06 04:12:20
+(epstopdf)                    size: 9632 bytes
+(epstopdf)             Output file: <gain-eps-converted-to.pdf>
+(epstopdf)                    date: 2013-12-06 06:09:59
+(epstopdf)                    size: 5264 bytes
+(epstopdf)             Command: <repstopdf --outfile=gain-eps-converted-to.pdf 
+gain.eps>
+(epstopdf)             \includegraphics on input line 288.
+Package epstopdf Info: Output file is already uptodate.
+File: gain-eps-converted-to.pdf Graphic file (type pdf)
+<use gain-eps-converted-to.pdf>
+Package pdftex.def Info: gain-eps-converted-to.pdf used on input line 288.
+(pdftex.def)             Requested size: 250.93842pt x 142.0604pt.
+
+
+Package Listings Warning: Text dropped after begin of listing on input line 294
+.
+
+
+Overfull \hbox (12.00269pt too wide) in paragraph at lines 300--301
+[][][][][][][][][][][][][][] 
+ []
+
+
+Package Listings Warning: Text dropped after begin of listing on input line 309
+.
+
+File: sum.jpg Graphic file (type jpg)
+<use sum.jpg>
+Package pdftex.def Info: sum.jpg used on input line 321.
+(pdftex.def)             Requested size: 250.93842pt x 132.00117pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Package Listings Warning: Text dropped after begin of listing on input line 328
+.
+
+[4] <preemp-sim.jpg, id=59, 584.1825pt x 154.5775pt>
+File: preemp-sim.jpg Graphic file (type jpg)
+ <use preemp-sim.jpg>
+Package pdftex.def Info: preemp-sim.jpg used on input line 341.
+(pdftex.def)             Requested size: 250.93842pt x 66.39862pt.
+Package epstopdf Info: Source file: <preemp_plot.eps>
+(epstopdf)                    date: 2013-12-06 09:34:51
+(epstopdf)                    size: 112648 bytes
+(epstopdf)             Output file: <preemp_plot-eps-converted-to.pdf>
+(epstopdf)                    date: 2013-12-06 09:39:00
+(epstopdf)                    size: 27193 bytes
+(epstopdf)             Command: <repstopdf --outfile=preemp_plot-eps-converted-
+to.pdf preemp_plot.eps>
+(epstopdf)             \includegraphics on input line 351.
+Package epstopdf Info: Output file is already uptodate.
+
+<preemp_plot-eps-converted-to.pdf, id=60, 543.02875pt x 242.9075pt>
+File: preemp_plot-eps-converted-to.pdf Graphic file (type pdf)
+
+<use preemp_plot-eps-converted-to.pdf>
+Package pdftex.def Info: preemp_plot-eps-converted-to.pdf used on input line 35
+1.
+(pdftex.def)             Requested size: 250.93842pt x 112.25029pt.
+
+
+Package Listings Warning: Text dropped after begin of listing on input line 359
+.
+
+
+Overfull \hbox (24.0028pt too wide) in paragraph at lines 363--364
+[][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (12.00269pt too wide) in paragraph at lines 364--365
+[][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (30.00287pt too wide) in paragraph at lines 366--367
+[][][][][][][][][][][][] 
+ []
+
+<deemp-sim.jpg, id=61, 570.13pt x 254.9525pt>
+File: deemp-sim.jpg Graphic file (type jpg)
+ <use deemp-sim.jpg>
+Package pdftex.def Info: deemp-sim.jpg used on input line 373.
+(pdftex.def)             Requested size: 250.93842pt x 112.21445pt.
+Package epstopdf Info: Source file: <deemp_plot.eps>
+(epstopdf)                    date: 2013-12-06 09:36:07
+(epstopdf)                    size: 112679 bytes
+(epstopdf)             Output file: <deemp_plot-eps-converted-to.pdf>
+(epstopdf)                    date: 2013-12-06 09:59:11
+(epstopdf)                    size: 27352 bytes
+(epstopdf)             Command: <repstopdf --outfile=deemp_plot-eps-converted-t
+o.pdf deemp_plot.eps>
+(epstopdf)             \includegraphics on input line 380.
+Package epstopdf Info: Output file is already uptodate.
+
+<deemp_plot-eps-converted-to.pdf, id=62, 543.02875pt x 242.9075pt>
+File: deemp_plot-eps-converted-to.pdf Graphic file (type pdf)
+
+<use deemp_plot-eps-converted-to.pdf>
+Package pdftex.def Info: deemp_plot-eps-converted-to.pdf used on input line 380
+.
+(pdftex.def)             Requested size: 250.93842pt x 112.25029pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[5 <./preemp-sim.jpg> <./preemp_plot-eps-converted-to.pdf> <./deemp-sim.jpg>]
+<nrs.jpg, id=139, 450.68375pt x 176.66pt>
+File: nrs.jpg Graphic file (type jpg)
+ <use nrs.jpg>
+Package pdftex.def Info: nrs.jpg used on input line 390.
+(pdftex.def)             Requested size: 250.93842pt x 98.36554pt.
+
+
+Package Listings Warning: Text dropped after begin of listing on input line 396
+.
+
+
+Package Listings Warning: Text dropped after begin of listing on input line 419
+.
+
+
+Overfull \hbox (132.0039pt too wide) in paragraph at lines 420--421
+[][][][][][][][] 
+ []
+
+Package epstopdf Info: Source file: <nrs_plot.eps>
+(epstopdf)                    date: 2013-12-06 10:20:23
+(epstopdf)                    size: 112290 bytes
+(epstopdf)             Output file: <nrs_plot-eps-converted-to.pdf>
+(epstopdf)                    date: 2013-12-06 10:21:32
+(epstopdf)                    size: 25573 bytes
+(epstopdf)             Command: <repstopdf --outfile=nrs_plot-eps-converted-to.
+pdf nrs_plot.eps>
+(epstopdf)             \includegraphics on input line 429.
+Package epstopdf Info: Output file is already uptodate.
+<nrs_plot-eps-converted-to.pdf, id=140, 543.02875pt x 242.9075pt>
+File: nrs_plot-eps-converted-to.pdf Graphic file (type pdf)
+
+<use nrs_plot-eps-converted-to.pdf>
+Package pdftex.def Info: nrs_plot-eps-converted-to.pdf used on input line 429.
+(pdftex.def)             Requested size: 250.93842pt x 112.25029pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6 <./deemp_plot-eps-converted-to.pdf> <./nrs.jpg> <./nrs_plot-eps-converted-t
+o.pdf>]
+<preemp.jpg, id=287, 2561.57pt x 612.2875pt>
+File: preemp.jpg Graphic file (type jpg)
+ <use preemp.jpg>
+Package pdftex.def Info: preemp.jpg used on input line 440.
+(pdftex.def)             Requested size: 516.0pt x 123.33354pt.
+
+<deemp.jpg, id=288, 3059.43pt x 1427.3325pt>
+File: deemp.jpg Graphic file (type jpg)
+ <use deemp.jpg>
+Package pdftex.def Info: deemp.jpg used on input line 447.
+(pdftex.def)             Requested size: 516.0pt x 240.72673pt.
+ [7
+
+ <./preemp.jpg> <./deemp.jpg>] <nrs_whole.pdf, id=293, 329.23pt x 543.02875pt>
+File: nrs_whole.pdf Graphic file (type pdf)
+
+<use nrs_whole.pdf>
+Package pdftex.def Info: nrs_whole.pdf used on input line 454.
+(pdftex.def)             Requested size: 516.06332pt x 652.4681pt.
+ [8 <./nrs_whole.pdf>] (./nrs.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 4585 strings out of 493315
+ 68311 string characters out of 6137904
+ 152328 words of memory out of 5000000
+ 7985 multiletter control sequences out of 15000+600000
+ 34568 words of font info for 65 fonts, out of 8000000 for 9000
+ 957 hyphenation exceptions out of 8191
+ 38i,15n,32p,1297b,1482s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
+xlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
+live/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texli
+ve/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive
+/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2
+013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2013
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2013/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2013/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2013/texmf
+-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2013/texmf-dist/font
+s/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/u
+rw/times/utmr8a.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/times/u
+tmri8a.pfb>
+Output written on nrs.pdf (8 pages, 3180171 bytes).
+PDF statistics:
+ 347 PDF objects out of 1000 (max. 8388607)
+ 163 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 66 words of extra memory for PDF output out of 10000 (max. 10000000)
+

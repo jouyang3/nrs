@@ -1,7 +1,6 @@
-\documentclass[a4paper]{IEEEtran}
+\documentclass[report]{IEEEtran}
 
 \usepackage{amsmath,graphicx,listings,blindtext,etoolbox}
-\usepackage[margin=1in]{geometry}
 
 \makeatletter
 \def\do#1{\patchcmd{#1}{\thepage}{\null}{}{\GenericWarning{}{Could not patch \string#1}}}
@@ -343,10 +342,9 @@ Xg	2	out gain a='10^(29/20)'
 			\caption{Pre-emphasis Op-amp Circuit.}
 		\end{figure}
 		Notice how simple this is. We simply called the high pass and low pass filters and scale it to what we want. In here, after numerous attempts to meet specification, we finally settled on scaling the frequency above 500Hz to 530Hz! This is the only way that it met our spec. One may see the entirety of the pre-emphasis filter in appendix A.
-		
-		\newpage
+		\linebreak
+		\linebreak
 		If driven by the test current defined TestPreemp.cir a waveform appears:
-		
 		\begin{figure}[h!]
 			\label{preemp-plot.cir}
 			\includegraphics[width=250px]{preemp_plot.eps}
@@ -381,7 +379,7 @@ Xg	3	out	gain	a='10^(3.5/20)'
 			\includegraphics[width=250px]{deemp_plot.eps}
 			\caption{Pre-emphasis Op-amp Circuit.}
 		\end{figure}
-		\newpage
+		
 	Now we can finally see the result of the NRS system! And we are going to do it by cascading the two emphasis filters and run AC analysis of the entire circuit!
 	
 	We begin by cascading the output of the pre-emphasis circuit to the input of the de-emphasis circuit. Here's the diagram when we made such connections:
@@ -391,7 +389,7 @@ Xg	3	out	gain	a='10^(3.5/20)'
 			\includegraphics[width=250px]{nrs.jpg}
 		\end{center}
 	\end{figure}
-	
+	\newpage
 	This is the netlist that we used to connect the two filters and at the same time tested the entire system:
 	\begin{center}
 		\begin{lstlisting}[caption=NRS netlist.][h!]
@@ -418,21 +416,23 @@ Xde	2	3	deemp
 	Notice in this circuit, we are including all of the sub-circuit files that has mutual library dependency for each to function. We have named each file according to their sub-circuit names like the case of writing code in Java. The file constant holds nothing more but these following two constants that is quite crucial to the success of the team. They are:
 		\begin{center}
 		\begin{lstlisting}[caption=System constants][h!]
-.PARAM Pi=3.1415926535897932384626433832795028841971693993751058
+.PARAM Pi=3.1415926535897932384626433832\\
+795028841971693993751058
 .PARAM w0='2000*Pi'
 		\end{lstlisting}
 		\end{center}
 	We have set the value of $\pi$ and the center frequency at $2000\pi$ or 1000Hz.
 	Here's the result of the final wave after passing through our N.R.S.:
-	
+	\newpage
 	\begin{figure}[h!]
 		\begin{center}
 			\includegraphics[width=250px]{nrs_plot.eps}
 		\end{center}
 	\end{figure}
+	
 	Again, see Appendix C for full treatment of data-craving.
 		
-		\pagebreak
+		\newpage
 		\onecolumn
 		\section*{Appendix A: Pre-Emphasis Circuit}
 		\it{Warning: nodes with the same name each has different scope. The repetition of the same name does not mean short. Circuit is made to accomodate each subcircuit that comprised the system.}
